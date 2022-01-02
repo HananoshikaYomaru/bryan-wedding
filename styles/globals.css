@@ -1,16 +1,33 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+
+@font-face {
+    font-family: "thank you";
+    src: url("../public/fonts/Thank you.ttf");
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+    font-family: "wenyue";
+    src: url("../public/fonts/WenyueType.otf");
 }
 
-* {
-  box-sizing: border-box;
+@font-face { 
+    font-family : "copperplate" ; 
+    src : url("../public/fonts/copperplatebold.ttf") ; 
+}
+
+@font-face {
+    font-family: "amibata";
+    src: url("../public/fonts/Amibata.otf");
+}
+
+@font-face {
+    font-family: "firefly";
+    src: url("../public/fonts/firefly.otf");
+}
+
+@tailwind utilities;
+
+.bartext { 
+    @apply font-copperplate text-grain-brown text-lg
 }
