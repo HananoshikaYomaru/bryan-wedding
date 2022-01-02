@@ -5,7 +5,7 @@ import Head from 'next/head'
 function MyApp({ Component, pageProps }: AppProps) {
   return <>
     <Head>
-      <title>Bryan and Fanny's wedding</title>
+      <title>Bryan and Fanny&apos;s wedding</title>
       <meta property="og:title" content="Bryan and Fanny's wedding" key="title" />
     </Head>
     <Component {...pageProps} />
