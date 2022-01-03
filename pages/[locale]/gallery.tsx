@@ -35,7 +35,7 @@ const Home: NextPage = () => {
     ]
 
     const Box = ({i} : {i : number}) => { 
-        return <div className="h-16 w-16 sm:h-32 sm:w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200 relative" onClick={() => openImage(i)}>
+        return <div className="h-20 w-20 sm:h-32 sm:w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200 relative" onClick={() => openImage(i)}>
             <Image src={memories[i].image} layout="fill" objectFit="cover" />
         </div>
     } 
@@ -48,17 +48,16 @@ const Home: NextPage = () => {
                     <div className="absolute h-full bg-blue-200 w-full"></div>
                     <Image src={banner} layout="fill" objectFit='cover' objectPosition="50% 100%" className="absolute h-144 w-full object-cover opacity-50" />
                     <div className="absolute flex flex-col items-center justify-center inset-0 space-y-5">
-                        <p className="font-serif text-6xl  text-pickled-bluewood">Gallery</p>
+                        <p className="font-serif text-2xl sm:text-6xl  text-pickled-bluewood">Gallery</p>
                     </div>
                 </div>
             </div>
 
 
-            {/* timeline */}
             <div className="flex flex-col w-full items-center">
                 <div className="w-5/6 h-fit flex flex-col items-center mt-20">
                     <p className={`heading ${getLocale() == "en" ? "font-thankyou " : "font-wenyue"}`}>Proposal</p>
-                    <div className="grid grid-cols-4 gap-6 mt-10">
+                    <div className="grid grid-cols-4 gap-3 sm:gap-6 mt-10 ">
                         <Box i={1}/>
                         <Box i={1}/>
                         <Box i={1}/>
@@ -74,7 +73,7 @@ const Home: NextPage = () => {
 
                 <div className="w-5/6 h-fit flex flex-col items-center mt-20">
                     <p className={`heading ${getLocale() == "en" ? "font-thankyou " : "font-wenyue"}`}>Proposal</p>
-                    <div className="grid grid-cols-4 gap-6 mt-10">
+                    <div className="grid grid-cols-4 gap-3 sm:gap-6 mt-10">
                         <Box i={1}/>
                         <Box i={1}/>
                         <Box i={1}/>
@@ -90,7 +89,7 @@ const Home: NextPage = () => {
 
                 <div className="w-5/6 h-fit flex flex-col items-center mt-20">
                     <p className={`heading ${getLocale() == "en" ? "font-thankyou " : "font-wenyue"}`}>Proposal</p>
-                    <div className="grid grid-cols-4 gap-6 mt-10">
+                    <div className="grid grid-cols-4 gap-3 sm:gap-6 mt-10">
                         <Box i={1}/>
                         <Box i={1}/>
                         <Box i={1}/>

@@ -58,7 +58,7 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="absolute  h-48 xs:h-56 sm:h-96 lg:h-144  bottom-0  flex flex-row-reverse" >
+          <div className="absolute  h-48 xs:h-56 sm:h-96 lg:h-144  bottom-0  flex flex-row-reverse items-end" >
             <div className="relative h-full aspect-[3/4]  ">
             <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-xl h-full aspect-[3/4] ">
             <Image src={image1} layout='fill' objectFit='cover'></Image>

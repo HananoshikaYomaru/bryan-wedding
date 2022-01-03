@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     screens: {
       ...defaultTheme.screens,
-      "xs": { "min": "420px" },
+      "xs": {"min" : "420px" , "max" : "639px"}
     },
     fontSize : { 
       ...defaultTheme.fontSize , 
