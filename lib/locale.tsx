@@ -1,12 +1,12 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect , useState } from "react";
 import { useRouter } from "next/router"
-import {L }from "../constants/localization"
+import {Data, L }from "../constants/localization"
 
 
 type LocaleContextProps = {
-    getLocale: () => string,
+    getLocale: () => "en" | "zh-hk",
     changeLocale : (target : string ) => void , 
-    L : () => {} 
+    L : () => Data, 
 }
 
 const LocaleContext = createContext({} as LocaleContextProps);
@@ -18,6 +18,12 @@ type LocaleProviderProps = {
 
 export const LocaleProvider = ({ children }: LocaleProviderProps) => {
     const router = useRouter()
+    const [isReady , setIsReady ] = useState (false ) 
+    useEffect( () => { 
+        if (router.isReady) { 
+            setIsReady (true) ;  
+        } 
+    }, [router.isReady])
     const getLocale = () => {
         // console.log(router.query.locale as string )
         return router.query.locale as string 
@@ -28,6 +34,10 @@ export const LocaleProvider = ({ children }: LocaleProviderProps) => {
         // else
         //     return "en"
     } 
+
+    if (!isReady ) { 
+        return <div>Loading</div>
+    }
     return <LocaleContext.Provider value={{
         getLocale: getLocale, 
         changeLocale : (target : string ) => { 

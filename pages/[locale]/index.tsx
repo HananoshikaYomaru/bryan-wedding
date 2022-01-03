@@ -6,30 +6,20 @@ import { useLocale } from '../../lib/locale'
 import Link from 'next/link'
 import moment from 'moment'
 import { useEffect, useState } from 'react'
+import Timer from '../../components/Timer'
 
 
 
 
 const Home: NextPage = () => {
-  const {getLocale} =   useLocale()
-  const [time , setTime] = useState(moment.duration(moment("2022-03-05T13:30:00" , "YYYY-MM-DDTHH:mm:ss").diff(moment())))
+  const {getLocale, L} =   useLocale()
 
   const data = { 
-    des1 : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at sapien ac leo pellentesque volutpat in ut erat. Aliquam faucibus ultrices auctor. Curabitur convallis tempus sem, at tincidunt ex vestibulum nec. Sed nisi arcu, interdum scelerisque felis ut, tempor pellentesque erat. Etiam viverra vestibulum leo, vitae aliquet urna cursus nec. Duis lobortis diam ut lacinia bibendum. Nulla fermentum odio dui, vel tristique sapien ornare non. Morbi molestie lobortis varius. Curabitur id molestie tortor, a convallis odio. Aenean mattis nunc nunc, scelerisque tincidunt sapien condimentum eu." , 
-    des2 : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at sapien ac leo pellentesque volutpat in ut erat. Aliquam faucibus ultrices auctor. Curabitur convallis tempus sem, at tincidunt ex vestibulum nec. Sed nisi arcu, interdum scelerisque felis ut, tempor pellentesque erat. Etiam viverra vestibulum leo, vitae aliquet urna cursus nec. Duis lobortis diam ut lacinia bibendum. Nulla fermentum odio dui, vel tristique sapien ornare non. Morbi molestie lobortis varius. Curabitur id molestie tortor, a convallis odio. Aenean mattis nunc nunc, scelerisque tincidunt sapien condimentum eu." , 
     image1 : image1 ,
     image2 : image1 ,
     image3 : image1, 
   }
-  useEffect(() => {
-    let interval = setInterval(()=> {
-      // console.log("hello")
-      // console.log(moment("2022-03-05T13:30:00" , "YYYY-MM-DDTHH:mm:ss").day())
-      setTime(moment.duration(moment("2022-03-05T13:30:00" , "YYYY-MM-DDTHH:mm:ss").diff(moment())))
-      
-    }, 1000) 
-    return () => {clearInterval(interval)}
-  }, [])
+ 
   return (
     <>
 
@@ -42,9 +32,9 @@ const Home: NextPage = () => {
           {/* <div className="backdrop-grayscale h-10 w-10"></div> */}
           <div className="absolute flex items-center justify-center inset-0">
             <div className="flex flex-col items-center space-y-10 mt-32">
-              <p className="text-soapstone drop-shadow font-wenyue text-xl md:text-2xl">Wedding Day</p>
+              <p className="text-soapstone drop-shadow font-wenyue text-xl md:text-2xl">{L().home.wedding_day}</p>
               <p className="font-thankyou text-soapstone text-2xl  md:text-7xl drop-shadow whitespace-nowrap">Bryan & Fanny</p>
-              <Link href={`/${getLocale()}/story`}><a className="bg-soapstone px-5 py-2 text-pickled-bluewood font-copperplate drop-shadow rounded-xl text-xl"> Our story</a></Link>
+              <Link href={`/${getLocale()}/story`}><a className="bg-soapstone px-5 py-2 text-pickled-bluewood font-copperplate drop-shadow rounded-xl text-xl">{L().home.story}</a></Link>
             </div>
           </div>
         </div>
@@ -52,26 +42,26 @@ const Home: NextPage = () => {
 
       {/* photos  */}
       <div className="w-3/4 2xl:w-1/2 mt-10 flex flex-col items-center max-w-6xl">
-        <p className="heading mb-10">About Us</p>
+        <p className={`mb-10 heading ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"} ` }>{L().home.about_us}</p>
         <div className="relative font-thankyou h-200 lg:h-300 w-full">
           <div className="absolute h-48 xs:h-56 sm:h-96 lg:h-144 w-full flex flex-row">
-            <div className="bg-red-200 h-full drop-shadow-xl aspect-w-9 aspect-h-16 ">
+            <div className="bg-red-200 h-full drop-shadow-xl  aspect-[3/4] ">
               <Image src={image1} layout='fill' objectFit='cover'></Image>
             </div>
             <div className="px-5 py-5 md:px-10 md:py-6 lg:px-20 lg:py-10 ">
               <p className="font-wenyue text-xs sm:text-sm line-clamp-10 lg:line-clamp-15">
-                {data.des1}
+                {L().home.des1}
               </p>
               </div>
           </div>
 
           <div className="absolute h-48 xs:h-56 sm:h-96 lg:h-144 w-full bottom-0 flex flex-row-reverse items-end" >
-            <div className="bg-red-200  drop-shadow-xl h-full aspect-w-9 aspect-h-16 ">
+            <div className="bg-red-200  drop-shadow-xl h-full aspect-[3/4]">
               <Image src={image1} layout='fill' objectFit='cover'></Image>
             </div>
             <div className="px-5 py-5 md:px-10 md:py-6 lg:px-20 lg:py-10">
               <p className="font-wenyue text-xs sm:text-sm line-clamp-10 lg:line-clamp-15 ">
-                {data.des2}
+                {L().home.des2}
               </p>
               </div>
           </div>
@@ -84,25 +74,8 @@ const Home: NextPage = () => {
       </div>
     {/* count down */}
       <div className="mt-20 w-full h-fit flex flex-col items-center p-10 space-y-10">
-        <p className="heading ">Date We Geting Married</p>
-        <div className="flex flex-row space-x-2 xs:space-x-5 sm:space-x-10 ">
-          <div className="w-16 h-20 sm:w-32 sm:h-40 bg-white rounded-lg shadow-xl flex flex-col items-center justify-center">
-            <p className="font-wenyue text-2xl text-pickled-bluewood">{time.asDays().toFixed()}</p>
-            <p className="font-copperplate text-pickled-bluewood  text-xs sm:text-base">days</p>
-          </div>
-          <div className="w-16 h-20 sm:w-32 sm:h-40 bg-white rounded-lg shadow-xl flex flex-col items-center justify-center">
-            <p className="font-wenyue text-2xl text-pickled-bluewood">{time.hours()}</p>
-            <p className="font-copperplate text-pickled-bluewood  text-xs sm:text-base">hours</p>
-          </div>
-          <div className="w-16 h-20 sm:w-32 sm:h-40 bg-white rounded-lg shadow-xl flex flex-col items-center justify-center">
-            <p className="font-wenyue text-2xl text-pickled-bluewood ">{time.minutes()}</p>
-            <p className="font-copperplate text-pickled-bluewood  text-xs sm:text-base">minutes</p>
-          </div>
-          <div className="w-16 h-20 sm:w-32 sm:h-40 bg-white rounded-lg shadow-xl flex flex-col items-center justify-center">
-            <p className="font-wenyue text-2xl text-pickled-bluewood">{time.seconds()}</p>
-            <p className="font-copperplate text-pickled-bluewood text-xs sm:text-base">seconds</p>
-          </div>
-        </div>
+        <p className={`heading ${getLocale() == "en"? "font-thankyou" : "font-wenyue"}` }>{L().home.day_until}</p>
+        <Timer/>
       </div>
     </>
   )

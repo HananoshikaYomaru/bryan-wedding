@@ -1,3 +1,4 @@
+
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -6,7 +7,6 @@ export type Props = {
 }
 
 const Layout = ({ children }: Props) => {
-
     return (
         <div className="h-full bg-soapstone">
             <div className="flex flex-col items-center">

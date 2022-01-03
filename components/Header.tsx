@@ -26,7 +26,7 @@ export function useMediaQuery(query: string) {
 }
 
 const Header = () => {
-  const { getLocale, changeLocale } = useLocale()
+  const { getLocale, changeLocale , L } = useLocale()
   const isTabletOrMobile = useMediaQuery('(max-width: 1224px)')
 
 
@@ -37,11 +37,11 @@ const Header = () => {
       !isTabletOrMobile &&
       <div>
         <div className="absolute flex flex-row space-x-16 center">
-          <Link href={`/${getLocale()}`}><a className="bartext" >Home</a></Link>
-          <Link href={`/${getLocale()}/info`}><a className="bartext">Wedding Day Information</a></Link>
-          <Link href={`/${getLocale()}/events`}><a className="bartext">Upcoming Events</a></Link>
-          <Link href={`/${getLocale()}/story`}><a className="bartext" >Our Story</a></Link>
-          <Link href={`/${getLocale()}/gallery`}><a className="bartext" >Our Gallery</a></Link>
+          <Link href={`/${getLocale()}`}><a className="bartext" >{L().layout.home}</a></Link>
+          <Link href={`/${getLocale()}/info`}><a className="bartext">{L().layout.information}</a></Link>
+          <Link href={`/${getLocale()}/events`}><a className="bartext">{L().layout.events}</a></Link>
+          <Link href={`/${getLocale()}/story`}><a className="bartext" >{L().layout.story}</a></Link>
+          <Link href={`/${getLocale()}/gallery`}><a className="bartext" >{L().layout.gallery}</a></Link>
         </div>
       </div>
 
@@ -55,11 +55,11 @@ const Header = () => {
               ({ close }) => {
                 return (
                   <div className="flex flex-col space-y-5">
-                    <Link href={`/${getLocale()}`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>Home</a></Link>
-                    <Link href={`/${getLocale()}/info`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200  whitespace-nowrap" onClick={()=>close()}>Wedding Day Information</a></Link>
-                    <Link href={`/${getLocale()}/events`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>Upcoming Events</a></Link>
-                    <Link href={`/${getLocale()}/story`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>Our Story</a></Link>
-                    <Link href={`/${getLocale()}/gallery`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>Our Gallery</a></Link>
+                    <Link href={`/${getLocale()}`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>{L().layout.home}</a></Link>
+                    <Link href={`/${getLocale()}/info`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200  whitespace-nowrap" onClick={()=>close()}>{L().layout.information}</a></Link>
+                    <Link href={`/${getLocale()}/events`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>{L().layout.events}</a></Link>
+                    <Link href={`/${getLocale()}/story`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>{L().layout.story}</a></Link>
+                    <Link href={`/${getLocale()}/gallery`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>{L().layout.gallery}</a></Link>
                   </div>
                 )
               }
