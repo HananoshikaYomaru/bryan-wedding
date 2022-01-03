@@ -26,7 +26,7 @@ export const LocaleProvider = ({ children }: LocaleProviderProps) => {
     }, [router.isReady])
     const getLocale = () => {
         // console.log(router.query.locale as string )
-        return router.query.locale as string 
+        return router.query.locale as "en" | "zh-hk" 
         // if (router.asPath.split("/").includes("en"))
         //     return "en"
         // else if (router.asPath.split("/").includes("zh-hk"))

@@ -32,9 +32,9 @@ const Home: NextPage = () => {
           {/* <div className="backdrop-grayscale h-10 w-10"></div> */}
           <div className="absolute flex items-center justify-center inset-0">
             <div className="flex flex-col items-center space-y-10 mt-32">
-              <p className="text-soapstone drop-shadow font-wenyue text-xl md:text-2xl">{L().home.wedding_day}</p>
-              <p className="font-thankyou text-soapstone text-2xl  md:text-7xl drop-shadow whitespace-nowrap">Bryan & Fanny</p>
-              <Link href={`/${getLocale()}/story`}><a className="bg-soapstone px-5 py-2 text-pickled-bluewood font-copperplate drop-shadow rounded-xl text-xl">{L().home.story}</a></Link>
+              <p className="text-soapstone drop-shadow font-wenyue text-base md:text-2xl">{L().home.wedding_day}</p>
+              <p className="font-thankyou text-soapstone text-3xl  md:text-7xl drop-shadow whitespace-nowrap">Bryan & Fanny</p>
+              <Link href={`/${getLocale()}/story`}><a className="bg-soapstone px-5 py-2 text-pickled-bluewood font-copperplate drop-shadow rounded-xl text:text-sm md:text-xl">{L().home.story}</a></Link>
             </div>
           </div>
         </div>
@@ -45,10 +45,10 @@ const Home: NextPage = () => {
         <p className={`mb-10 heading ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"} ` }>{L().home.about_us}</p>
         <div className="relative font-thankyou h-200 lg:h-300 w-full">
           <div className="absolute h-48 xs:h-56 sm:h-96 lg:h-144 w-full flex flex-row">
-            <div className="bg-red-200 h-full drop-shadow-xl  aspect-[3/4] ">
+            <div className="bg-red-200 h-full w-[100rem] drop-shadow-xl ">
               <Image src={image1} layout='fill' objectFit='cover'></Image>
             </div>
-            <div className="px-5 py-5 md:px-10 md:py-6 lg:px-20 lg:py-10 ">
+            <div className="pl-5 py-5 md:pl-10 md:py-6 lg:pl-20 lg:py-10 ">
               <p className="font-wenyue text-xs sm:text-sm line-clamp-10 lg:line-clamp-15">
                 {L().home.des1}
               </p>
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
             <div className="bg-red-200  drop-shadow-xl h-full aspect-[3/4]">
               <Image src={image1} layout='fill' objectFit='cover'></Image>
             </div>
-            <div className="px-5 py-5 md:px-10 md:py-6 lg:px-20 lg:py-10">
+            <div className="pr-5 py-5 md:pr-10 md:py-6 lg:pr-20 lg:py-10">
               <p className="font-wenyue text-xs sm:text-sm line-clamp-10 lg:line-clamp-15 ">
                 {L().home.des2}
               </p>
