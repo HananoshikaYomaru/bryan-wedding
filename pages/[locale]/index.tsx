@@ -44,8 +44,9 @@ const Home: NextPage = () => {
       <div className="w-3/4 2xl:w-1/2 mt-10 flex flex-col items-center max-w-6xl">
         <p className={`mb-10 heading ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"} ` }>{L().home.about_us}</p>
         <div className="relative font-thankyou h-200 lg:h-300 w-full">
+
           <div className="absolute h-48 xs:h-56 sm:h-96 lg:h-144 w-full flex flex-row">
-            <div className="bg-red-200 h-full w-[100rem] drop-shadow-xl ">
+            <div className="bg-red-200 h-full aspect-[3] drop-shadow-xl  overflow-hidden ">
               <Image src={image1} layout='fill' objectFit='cover'></Image>
             </div>
             <div className="pl-5 py-5 md:pl-10 md:py-6 lg:pl-20 lg:py-10 ">
@@ -56,7 +57,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="absolute  h-48 xs:h-56 sm:h-96 lg:h-144 w-full bottom-0 flex flex-row-reverse items-end" >
-            <div className="bg-red-200  drop-shadow-xl h-full aspect-[3/4] opacity-5">
+            <div className=" bg-red-200  drop-shadow-xl h-full aspect-[3] overflow-hidden ">
               <Image src={image1} layout='fill' objectFit='cover'></Image>
             </div>
             <div className="pr-5 py-5 md:pr-10 md:py-6 lg:pr-20 lg:py-10">
@@ -67,7 +68,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="absolute inset-0 top-1/2 left-1/2 bg-red-200 h-64 w-48 lg:h-96 lg:w-72  transform -translate-x-1/2 -translate-y-1/2 drop-shadow-xl">
-          <Image src={image1} layout='fill' objectFit='cover'></Image>
+            <Image src={image1} layout='fill' objectFit='cover'></Image>
           </div>
 
         </div>
