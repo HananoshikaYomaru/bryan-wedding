@@ -55,7 +55,7 @@ const Home: NextPage = () => {
         <p className="heading mb-10">About Us</p>
         <div className="relative font-thankyou h-200 lg:h-300 w-full">
           <div className="absolute h-48 xs:h-56 sm:h-96 lg:h-144 w-full flex flex-row">
-            <div className="bg-red-200 h-full aspect-[3/4] drop-shadow-xl">
+            <div className="bg-red-200 h-full drop-shadow-xl aspect-w-9 aspect-h-16 ">
               <Image src={image1} layout='fill' objectFit='cover'></Image>
             </div>
             <div className="px-5 py-5 md:px-10 md:py-6 lg:px-20 lg:py-10 ">
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="absolute h-48 xs:h-56 sm:h-96 lg:h-144 w-full bottom-0 flex flex-row-reverse items-end" >
-            <div className="bg-red-200  drop-shadow-xl aspect-[3/4] h-full">
+            <div className="bg-red-200  drop-shadow-xl h-full aspect-w-9 aspect-h-16 ">
               <Image src={image1} layout='fill' objectFit='cover'></Image>
             </div>
             <div className="px-5 py-5 md:px-10 md:py-6 lg:px-20 lg:py-10">

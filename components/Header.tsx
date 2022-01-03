@@ -51,13 +51,19 @@ const Header = () => {
         <Popover className="relative mt-6  ml-5">
           <Popover.Button><MenuAlt2Icon className="absolute w-8 h-8 text-grain-brown top-0 left-0"></MenuAlt2Icon></Popover.Button>
           <Popover.Panel className="absolute z-10 bg-stone-300 p-10 rounded-xl shadow mt-5">
-            <div className="flex flex-col space-y-5">
-              <Link href={`/${getLocale()}`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" >Home</a></Link>
-              <Link href={`/${getLocale()}/info`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200  whitespace-nowrap">Wedding Day Information</a></Link>
-              <Link href={`/${getLocale()}/events`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap">Upcoming Events</a></Link>
-              <Link href={`/${getLocale()}/story`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" >Our Story</a></Link>
-              <Link href={`/${getLocale()}/gallery`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" >Our Gallery</a></Link>
-            </div>
+            {
+              ({ close }) => {
+                return (
+                  <div className="flex flex-col space-y-5">
+                    <Link href={`/${getLocale()}`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>Home</a></Link>
+                    <Link href={`/${getLocale()}/info`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200  whitespace-nowrap" onClick={()=>close()}>Wedding Day Information</a></Link>
+                    <Link href={`/${getLocale()}/events`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>Upcoming Events</a></Link>
+                    <Link href={`/${getLocale()}/story`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>Our Story</a></Link>
+                    <Link href={`/${getLocale()}/gallery`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>Our Gallery</a></Link>
+                  </div>
+                )
+              }
+            }
           </Popover.Panel>
         </Popover>
       </div>
