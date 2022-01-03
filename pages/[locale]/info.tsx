@@ -4,9 +4,10 @@ import { Fragment, useState } from "react";
 import { useLocale } from "../../lib/locale";
 import banner from "../../public/images/info_banner.jpg";
 import flower from "../../public/images/flower.png";
-import { Carousel } from "react-responsive-carousel";
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import image1 from "../../public/images/carousel1.jpg"
+import { useMediaQuery } from 'react-responsive'
+
 
 const Home: NextPage = () => {
     const images = [

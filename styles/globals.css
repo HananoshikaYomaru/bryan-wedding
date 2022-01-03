@@ -42,5 +42,5 @@
 }
 
 .heading { 
-    @apply font-thankyou text-pickled-bluewood text-3xl drop-shadow
+    @apply font-thankyou text-pickled-bluewood  drop-shadow whitespace-nowrap text-lg sm:text-xl md:text-3xl
 }
