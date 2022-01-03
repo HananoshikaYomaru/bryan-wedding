@@ -4,9 +4,11 @@ import Image from "next/image"
 import { Fragment, useState } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import image1 from "../../public/images/P1333108_e.jpg"
-
+import { useLocale } from "../../lib/locale"
+import { XCircleIcon } from "@heroicons/react/solid"
 
 const Home: NextPage = () => {
+    const {getLocale} = useLocale(); 
     const [isOpen, setIsOpen] = useState(false)
     const [imageNumber, setImageNumber] = useState(0);
     const openImage = (image: number) => {
@@ -32,15 +34,19 @@ const Home: NextPage = () => {
         }
     ]
 
+    const Box = ({i} : {i : number}) => { 
+        return <div className="h-16 w-16 sm:h-32 sm:w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200 relative" onClick={() => openImage(i)}>
+            <Image src={memories[i].image} layout="fill" objectFit="cover" />
+        </div>
+    } 
+
     return (
         <>
             {/* banner */}
             <div className="w-full">
-                <div className="h-144 relative w-full ">
-                    <div className="absolute h-144 bg-blue-200 w-full"></div>
-                    {/* <img src="/images/P1322774_e.jpg" className="absolute h-144 w-full object-cover opacity-50" ></img> */}
+                <div className="h-72 lg:h-144 relative w-full ">
+                    <div className="absolute h-full bg-blue-200 w-full"></div>
                     <Image src={banner} layout="fill" objectFit='cover' objectPosition="50% 100%" className="absolute h-144 w-full object-cover opacity-50" />
-                    {/* <div className="backdrop-grayscale h-10 w-10"></div> */}
                     <div className="absolute flex flex-col items-center justify-center inset-0 space-y-5">
                         <p className="font-serif text-6xl  text-pickled-bluewood">Gallery</p>
                     </div>
@@ -51,53 +57,50 @@ const Home: NextPage = () => {
             {/* timeline */}
             <div className="flex flex-col w-full items-center">
                 <div className="w-5/6 h-fit flex flex-col items-center mt-20">
-                    <p className="heading">Proposal</p>
+                    <p className={`heading ${getLocale() == "en" ? "font-thankyou " : "font-wenyue"}`}>Proposal</p>
                     <div className="grid grid-cols-4 gap-6 mt-10">
-                        <div className="relative h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200" onClick={() => openImage(0)}>
-                            <Image src={image1} layout="fill" objectFit="cover" className="absolute" />
-                        </div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200" onClick={() => openImage(1)}></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200" onClick={() => openImage(2)}></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200" onClick={() => openImage(3)}></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200" onClick={() => openImage(4)}></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200" onClick={() => openImage(5)}></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200" onClick={() => openImage(6)}></div>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
                         <div className="invisible"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200" onClick={() => openImage(7)}></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200" onClick={() => openImage(8)}></div>
+                        <Box i={1}/>
+                        <Box i={1}/>
                     </div>
                 </div>
 
                 <div className="w-5/6 h-fit flex flex-col items-center mt-20">
-                    <p className="heading">Proposal</p>
+                    <p className={`heading ${getLocale() == "en" ? "font-thankyou " : "font-wenyue"}`}>Proposal</p>
                     <div className="grid grid-cols-4 gap-6 mt-10">
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200 overflow-hidden">
-                        </div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
                         <div className="invisible"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
+                        <Box i={1}/>
+                        <Box i={1}/>
                     </div>
                 </div>
 
-                <div className="w-5/6 h-fit flex flex-col items-center mt-20 ">
-                    <p className="heading">Proposal</p>
+                <div className="w-5/6 h-fit flex flex-col items-center mt-20">
+                    <p className={`heading ${getLocale() == "en" ? "font-thankyou " : "font-wenyue"}`}>Proposal</p>
                     <div className="grid grid-cols-4 gap-6 mt-10">
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
+                        <Box i={1}/>
                         <div className="invisible"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
-                        <div className="h-32 w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200"></div>
+                        <Box i={1}/>
+                        <Box i={1}/>
                     </div>
                 </div>
             </div>
@@ -139,11 +142,11 @@ const Home: NextPage = () => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <div className="inline-block w-fit p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-
-                                <div className="flex flex-col items-center space-y-5">
-                                    <div className="relative w-200 aspect-video">
-                                        <Image src={memories[imageNumber].image} layout="fill" objectFit="cover" className="absolute" />
+                            <div className="inline-block w-200 p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                                <button onClick={()=>setIsOpen(false)}><XCircleIcon className="w-6 h-6 text-gray-300"></XCircleIcon></button>
+                                <div className="flex flex-col w-full items-center space-y-5">
+                                    <div className="relative w-full aspect-[4/3]" >
+                                        <Image src={memories[imageNumber].image} layout="fill" objectFit="cover"  />
                                     </div>
 
                                     <Dialog.Title

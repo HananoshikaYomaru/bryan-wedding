@@ -8,8 +8,14 @@ module.exports = {
   theme: {
     screens: {
       ...defaultTheme.screens,
-      "xs": { "min": "321px", "max": "639px" },
+      "xs": { "min": "420px" },
     },
+    fontSize : { 
+      ...defaultTheme.fontSize , 
+      "2xs" : ".5rem" , 
+      "3xs" : ".4rem" , 
+      "4xs" : ".3rem" , 
+    } , 
     extend: {
       lineClamp: {
         7: '7',

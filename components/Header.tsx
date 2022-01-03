@@ -6,24 +6,8 @@ import Link from "next/link";
 import { MenuAlt2Icon } from "@heroicons/react/solid";
 import { Popover } from "@headlessui/react";
 import { useState, useEffect } from "react";
+import { useMediaQuery } from "../lib/mediaQuery";
 
-export function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia(query);
-    if (media.matches !== matches) {
-      setMatches(media.matches);
-    }
-    const listener = () => {
-      setMatches(media.matches);
-    };
-    media.addListener(listener);
-    return () => media.removeListener(listener);
-  }, [matches, query]);
-
-  return matches;
-}
 
 const Header = () => {
   const { getLocale, changeLocale , L } = useLocale()
@@ -40,7 +24,7 @@ const Header = () => {
           <Link href={`/${getLocale()}`}><a className="bartext" >{L().layout.home}</a></Link>
           <Link href={`/${getLocale()}/info`}><a className="bartext">{L().layout.information}</a></Link>
           <Link href={`/${getLocale()}/events`}><a className="bartext">{L().layout.events}</a></Link>
-          <Link href={`/${getLocale()}/story`}><a className="bartext" >{L().layout.story}</a></Link>
+          {/* <Link href={`/${getLocale()}/story`}><a className="bartext" >{L().layout.story}</a></Link> */}
           <Link href={`/${getLocale()}/gallery`}><a className="bartext" >{L().layout.gallery}</a></Link>
         </div>
       </div>
@@ -58,7 +42,7 @@ const Header = () => {
                     <Link href={`/${getLocale()}`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>{L().layout.home}</a></Link>
                     <Link href={`/${getLocale()}/info`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200  whitespace-nowrap" onClick={()=>close()}>{L().layout.information}</a></Link>
                     <Link href={`/${getLocale()}/events`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>{L().layout.events}</a></Link>
-                    <Link href={`/${getLocale()}/story`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>{L().layout.story}</a></Link>
+                    {/* <Link href={`/${getLocale()}/story`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>{L().layout.story}</a></Link> */}
                     <Link href={`/${getLocale()}/gallery`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>{L().layout.gallery}</a></Link>
                   </div>
                 )

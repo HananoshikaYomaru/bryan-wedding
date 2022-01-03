@@ -44,3 +44,7 @@
 .heading { 
     @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-lg sm:text-xl md:text-3xl
 }
+
+.text-normal { 
+    @apply text-xs sm:text-base text-pickled-bluewood
+}

@@ -34,7 +34,7 @@ const Home: NextPage = () => {
             <div className="flex flex-col items-center space-y-10 mt-32">
               <p className="text-soapstone drop-shadow font-wenyue text-base md:text-2xl">{L().home.wedding_day}</p>
               <p className="font-thankyou text-soapstone text-3xl  md:text-7xl drop-shadow whitespace-nowrap">Bryan & Fanny</p>
-              <Link href={`/${getLocale()}/story`}><a className="bg-soapstone px-5 py-2 text-pickled-bluewood font-copperplate drop-shadow rounded-xl text:text-sm md:text-xl">{L().home.story}</a></Link>
+              <Link href={`/${getLocale()}/info`}><a className="bg-soapstone px-5 py-2 text-pickled-bluewood font-copperplate drop-shadow rounded-xl text:text-sm md:text-xl ">{L().home.info}</a></Link>
             </div>
           </div>
         </div>
@@ -58,9 +58,9 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="absolute  h-48 xs:h-56 sm:h-96 lg:h-144 bg-blue-200 bottom-0  flex flex-row-reverse" >
-            <div className="relative h-full aspect-[3/4] bg-red-200 ">
-            <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-xl h-full aspect-[3/4] opacity-20">
+          <div className="absolute  h-48 xs:h-56 sm:h-96 lg:h-144  bottom-0  flex flex-row-reverse" >
+            <div className="relative h-full aspect-[3/4]  ">
+            <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-xl h-full aspect-[3/4] ">
             <Image src={image1} layout='fill' objectFit='cover'></Image>
             </div>
             </div>
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
             </div>
           </div> */}
 
-          <div className="absolute inset-0 top-1/2 left-1/2 bg-red-200 h-64 w-48 lg:h-96 lg:w-72  transform -translate-x-1/2 -translate-y-1/2 drop-shadow-xl">
+          <div className="absolute inset-0 top-1/2 left-1/2  h-64 w-48 lg:h-96 lg:w-72  transform -translate-x-1/2 -translate-y-1/2 drop-shadow-xl">
             <Image src={image1} layout='fill' objectFit='cover'></Image>
           </div>
 
