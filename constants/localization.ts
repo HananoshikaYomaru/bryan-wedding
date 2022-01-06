@@ -84,7 +84,7 @@ export const L : {[locale:string] : Data } = {
             gallery  : "相簿" , 
         }, 
         home :{
-            wedding_day : "Wedding Day" , 
+            wedding_day : "婚禮" , 
             story : "Our Story" , 
             info : "婚禮詳情" , 
             about_us : "關於我們" , 
