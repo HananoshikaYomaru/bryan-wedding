@@ -79,7 +79,7 @@ const Home: NextPage = () => {
                 {
                     sections.map(s => {
                         return (
-                            <Memory title={s.title} memories={s.memories} />
+                            <Memory key={s.title} title={s.title} memories={s.memories} />
                         )
                     })
                 }
