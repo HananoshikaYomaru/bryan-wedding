@@ -34,7 +34,7 @@ const Memory = ({ title, memories }: { title : string , memories: Memory[] }) =>
                 {
                     memories.map((_, index) => {
                         // if (![7, 10, 11].includes(index)) {
-                            return <Box i={index} />
+                            return <Box key={index} i={index} />
                         // } else {
                         //     return <div className="invisible"></div>
                         // }
