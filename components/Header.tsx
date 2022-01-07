@@ -1,11 +1,9 @@
 import { useLocale } from "../lib/locale";
-import cover from "../public/images/cover.jpg"
+import cover from "../public/images/cover.webp"
 import Image from "next/image"
 import Link from "next/link";
-// import { useMediaQuery } from "react-responsive";
 import { MenuAlt2Icon } from "@heroicons/react/solid";
 import { Popover } from "@headlessui/react";
-import { useState, useEffect } from "react";
 import { useMediaQuery } from "../lib/mediaQuery";
 
 
@@ -16,7 +14,7 @@ const Header = () => {
 
 
   return <div className="relative w-full h-20">
-    <Image src={cover} layout="fill" objectFit="cover" className=""></Image>
+    <Image src={cover} layout="fill" objectFit="cover" className="pointer-events-none" draggable={false}></Image>
     {
       !isTabletOrMobile &&
       <div>

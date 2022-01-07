@@ -1,7 +1,5 @@
 import type { NextPage } from 'next'
 import Image from "next/image"
-import banner from "../../public/images/P1322774_e.jpg"
-import image1 from "../../public/images/P1322586_e.jpg"
 import { useLocale } from '../../lib/locale'
 import Link from 'next/link'
 import moment from 'moment'
@@ -15,9 +13,10 @@ const Home: NextPage = () => {
   const { getLocale, L } = useLocale()
 
   const data = {
-    image1: image1,
-    image2: image1,
-    image3: image1,
+    banner: "https://res.cloudinary.com/yomaru/image/upload/w_3840,c_scale/v1641533993/pre-wedding/Copy_of_P1322774_e_pl6t6s.webp", 
+    image1: "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532713/pre-wedding/Copy_of_P1333043_e_nahexf.webp",
+    image2: "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532710/pre-wedding/Copy_of_P1333422_e_uxmbtm.webp",
+    image3: "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532715/pre-wedding/Copy_of_P1322586_e_fybczl.webp",
   }
 
   return (
@@ -28,13 +27,13 @@ const Home: NextPage = () => {
         <div className="h-144 relative w-full ">
           <div className="absolute h-144 bg-blue-200 w-full"></div>
           {/* <img src="/images/P1322774_e.jpg" className="absolute h-144 w-full object-cover opacity-50" ></img> */}
-          <Image src={banner} layout="fill" objectFit='cover' objectPosition="50% 35%" className="absolute h-144 w-full object-cover opacity-50" />
+          <Image src={data.banner} layout="fill" objectFit='cover' objectPosition="50% 35%" className="absolute opacity-50" />  
           {/* <div className="backdrop-grayscale h-10 w-10"></div> */}
           <div className="absolute flex items-center justify-center inset-0">
             <div className="flex flex-col items-center space-y-10 mt-32">
               <p className="text-soapstone drop-shadow font-wenyue text-base md:text-2xl">{L().home.wedding_day}</p>
               <p className="font-thankyou text-soapstone text-3xl  md:text-7xl drop-shadow whitespace-nowrap">Bryan & Fanny</p>
-              <Link href={`/${getLocale()}/info`}><a className="bg-soapstone px-5 py-2 text-pickled-bluewood font-copperplate drop-shadow rounded-xl text:text-sm md:text-xl ">{L().home.info}</a></Link>
+              <Link href={`/${getLocale()}/info`}><a className={`bg-soapstone px-5 py-2 text-pickled-bluewood drop-shadow rounded-xl text:text-sm md:text-xl ${getLocale() == "en" ? "font-copperplate" : "font-wenyue" }`}>{L().home.info}</a></Link>
             </div>
           </div>
         </div>
@@ -48,7 +47,7 @@ const Home: NextPage = () => {
           <div className="absolute h-48 xs:h-56 sm:h-96 lg:h-144 w-full flex flex-row">
             <div className="relative h-full  aspect-[3/4]  ">
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-xl h-full aspect-[3/4] ">
-             <Image src={image1} layout='fill' objectFit='cover'></Image>
+             <Image src={data.image1} layout='fill' objectFit='cover'></Image>
              </div>
             </div>
             <div className="pl-5 py-5 md:pl-10 md:py-6 lg:pl-20 lg:py-10 ">
@@ -61,7 +60,7 @@ const Home: NextPage = () => {
           <div className="absolute  h-48 xs:h-56 sm:h-96 lg:h-144  bottom-0  flex flex-row-reverse items-end" >
             <div className="relative h-full aspect-[3/4]  ">
             <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-xl h-full aspect-[3/4] ">
-            <Image src={image1} layout='fill' objectFit='cover'></Image>
+            <Image src={data.image2} layout='fill' objectFit='cover'></Image>
             </div>
             </div>
             <div className="pr-5 py-5 md:pr-10 md:py-6 lg:pr-20 lg:py-10">
@@ -70,25 +69,9 @@ const Home: NextPage = () => {
               </p>
               </div>
           </div>
-          {/* <div className="absolute  bottom-0 right-0 w-full h-fit" >
-            <div className="relative">
-              <div className="absolute bg-red-200 bottom-0 right-0  h-48 xs:h-56 sm:h-96 lg:h-144 aspect-[3/4] ">
-                <div className="relative w-full h-full">
-                  <Image src={image1} layout='fill' objectFit='cover'></Image>
-                  <div className="absolute bottom-0 -left-32 w-32 sm:w-64 sm:-left-64 lg:w-96 lg:-left-96 inset-0 pr-5 py-5 md:pr-10 md:py-6 lg:pr-20 lg:py-10" >
-                    <div className="relative w-full h-full ">
-                      <p className="absolute bottom-0 font-wenyue text-xs sm:text-sm line-clamp-10 lg:line-clamp-15 ">
-                        {L().home.des2}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
 
           <div className="absolute inset-0 top-1/2 left-1/2  h-64 w-48 lg:h-96 lg:w-72  transform -translate-x-1/2 -translate-y-1/2 drop-shadow-xl">
-            <Image src={image1} layout='fill' objectFit='cover'></Image>
+            <Image src={data.image3} layout='fill' objectFit='cover'></Image>
           </div>
 
         </div>

@@ -8,14 +8,14 @@ module.exports = {
   theme: {
     screens: {
       ...defaultTheme.screens,
-      "xs": {"min" : "420px" , "max" : "639px"}
+      "xs": { "min": "420px", "max": "639px" }
     },
-    fontSize : { 
-      ...defaultTheme.fontSize , 
-      "2xs" : ".5rem" , 
-      "3xs" : ".4rem" , 
-      "4xs" : ".3rem" , 
-    } , 
+    fontSize: {
+      ...defaultTheme.fontSize,
+      "2xs": ".5rem",
+      "3xs": ".4rem",
+      "4xs": ".3rem",
+    },
     extend: {
       lineClamp: {
         7: '7',
@@ -50,6 +50,7 @@ module.exports = {
         "sage": "#9DA086",
         "wheat": "#F3DAB3",
         "brandy": "#DFC89E",
+        "beige": "#F6F3E2",
       },
       fontFamily: {
         // ...defaultTheme.fontFamily ,
@@ -59,6 +60,7 @@ module.exports = {
         "amibata": ["amibata"],
         "firefly": ["firefly"],
         "melinda": ["melinda"],
+        "chawan": ["chawan"]
       }
     },
   },

@@ -1,6 +1,9 @@
 import { createContext, useContext, useEffect , useState } from "react";
 import { useRouter } from "next/router"
 import {Data, L }from "../constants/localization"
+import Layout from "../components/Layout";
+import LoadingRing from "../public/images/loading.gif"
+import Image from "next/image"
 
 
 type LocaleContextProps = {
@@ -36,7 +39,9 @@ export const LocaleProvider = ({ children }: LocaleProviderProps) => {
     } 
 
     if (!isReady ) { 
-        return <div>Loading</div>
+        return <div className="w-full h-screen bg-beige flex items-center justify-center">
+           <Image src={LoadingRing} />
+        </div> 
     }
     return <LocaleContext.Provider value={{
         getLocale: getLocale, 

@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 module.exports = {
   reactStrictMode: true,
   basePath : "/wedding", 
@@ -17,6 +18,9 @@ module.exports = {
       }
     ]
   }, 
+  images: { 
+    domains : ["res.cloudinary.com"] , 
+  }
   // async rewrite () { 
   //   return [
   //     {
