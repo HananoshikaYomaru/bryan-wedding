@@ -16,13 +16,13 @@ const MobileTimeline = ({ events }: { events: Event[] }) => {
                             <Link href="gallery" >
                                 <a className="w-5/6 aspect-[5/3] rounded-lg shadow-lg bg-white flex flex-row overflow-hidden">
 
-                                    <div className="h-full aspect-[3/4]  bg-red-200 relative">
+                                    <div className="w-2/5 bg-red-200 relative">
                                         <Image src={e.image} layout="fill" objectFit="cover" className=""></Image>
                                     </div>
-                                    <div className="p-3 xs:p-8 sm:p-10 flex flex-col justify-between">
+                                    <div className="w-3/5 p-3 xs:p-8 sm:p-10 flex flex-col justify-between">
                                         <div>
                                             <p className="heading font-wenyue underline mb-3">{e.title}</p>
-                                            <p className="font-wenyue line-clamp-6 xs:line-clamp-10 ">{e.description}</p>
+                                            <p className="font-wenyue line-clamp-6 xs:line-clamp-10 text-normal">{e.description}</p>
                                         </div>
                                         <p className="font-wenyue text-normal text-indigo-600">{L().events.date}: {e.date}</p>
                                     </div>

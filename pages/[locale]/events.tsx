@@ -14,19 +14,19 @@ const Home: NextPage = () => {
     const e = L().events.events
     const events : Event[] = [
         {
-            image : "https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp" , 
+            image : "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1641532719/propose/DSCF1931_pgrtir.webp" , 
             ...e[0], 
         }, 
         {
-            image : "https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp", 
+            image : "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1641532719/propose/DSCF1931_pgrtir.webp", 
             ...e[1] , 
         },
         {
-            image : "https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp", 
+            image : "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1641532719/propose/DSCF1931_pgrtir.webp", 
             ...e[2] , 
         },
         {
-            image : "https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp", 
+            image : "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1641532719/propose/DSCF1931_pgrtir.webp", 
             ...e[3] , 
         }
     ]
