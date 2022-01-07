@@ -2,6 +2,7 @@ import { NextPage } from "next"
 import Image from "next/image"
 import Memory , {Memory as MemoryType} from "../../components/Memory";
 import { useLocale } from "../../lib/locale"
+import Whole from "../../public/images/whole.svg"
 
 const linksToMemories = (links: string[], memories: { description?: string, title?: string }[]): (MemoryType[]) => {
 
@@ -75,7 +76,11 @@ const Home: NextPage = () => {
             </div>
 
 
-            <div className="flex flex-col w-full items-center">
+            <div className="flex flex-col w-full items-center relative">
+                {/* background  */}
+                <div className="absolute w-full right-0 top-0 sm:w-[60%] sm:left-1/4 sm:top-0 opacity-50 pointer-events-none">
+          <Image src={Whole} layout="responsive" className="" />
+        </div>
                 {
                     sections.map(s => {
                         return (
@@ -84,7 +89,6 @@ const Home: NextPage = () => {
                     })
                 }
             </div>
-
             <div className="h-32"></div>
 
 
