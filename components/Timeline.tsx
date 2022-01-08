@@ -28,12 +28,12 @@ const TimeLine = ({ events }: { events: Event[] }) => {
                                     </div>
                                     <Link href={`gallery`}>
                                         <a className="order-1 bg-soapstone rounded-lg shadow-xl w-full xl:w-5/12 ml-10 xl:mx-0 px-6 py-4 flex flex-col">
-                                                <h3 className={`text-center text-lg underline mb-3 font-wenyue`}>{event.title}</h3>
-                                                <div className="bg-red-200 w-full aspect-[7/3] xl:aspect-[5/3]  relative mb-3">
-                                                    <Image src={event.image} layout="fill" objectFit="cover" />
-                                                </div>
-                                                <p className="text-sm leading-snug tracking-wide text-gray-700 font-wenyue">{event.description}</p>
-                                                <p className="text-xs sm:text-sm leading-snug tracking-wide text-indigo-600 font-wenyue">{L().events.date}: {event.date}</p>
+                                        <h3 className={`text-center text-lg underline mb-3 font-wenyue`}>{event.title}</h3>
+                                        <div className="bg-red-200 w-full aspect-[7/3] xl:aspect-[5/3]  relative mb-3">
+                                            <Image src={event.image} layout="fill" objectFit="cover" />
+                                        </div>
+                                        <p className="text-sm leading-snug tracking-wide text-gray-700 font-wenyue">{event.description}</p>
+                                        <p className="text-xs sm:text-sm leading-snug tracking-wide text-indigo-600 font-wenyue">{L().events.date}: {event.date}</p>
                                         </a>
                                     </Link>
                                 </div>

@@ -7,6 +7,7 @@ import { useMediaQuery } from "../../lib/mediaQuery"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 import TimeLine , {Event}from "../../components/Timeline"
 import MobileTimeline from "../../components/MobileTimeline"
+import Layout from "../../components/Layout"
 
 const Home: NextPage = () => {
     const { getLocale, L } = useLocale();
@@ -33,7 +34,7 @@ const Home: NextPage = () => {
 
 
     return (
-        <>
+        <Layout>
             {/* banner */}
             <div className="w-full">
                 <div className="h-72 sm:h-144 relative w-full ">
@@ -48,7 +49,7 @@ const Home: NextPage = () => {
             {
                 !isTabletOrMobile ? <TimeLine events={events}/> : <MobileTimeline events={events}/>
             }
-        </>
+        </Layout>
     )
 }
 export default Home 

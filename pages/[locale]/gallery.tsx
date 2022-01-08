@@ -1,5 +1,6 @@
 import { NextPage } from "next"
 import Image from "next/image"
+import Layout from "../../components/Layout";
 import Memory , {Memory as MemoryType} from "../../components/Memory";
 import { useLocale } from "../../lib/locale"
 import Whole from "../../public/images/whole.svg"
@@ -63,7 +64,7 @@ const Home: NextPage = () => {
     ]
 
     return (
-        <>
+        <Layout>
             {/* banner */}
             <div className="w-full">
                 <div className="h-72 lg:h-144 relative w-full ">
@@ -92,7 +93,7 @@ const Home: NextPage = () => {
             <div className="h-32"></div>
 
 
-        </>
+        </Layout>
     )
 }
 export default Home 

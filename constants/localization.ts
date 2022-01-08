@@ -78,12 +78,12 @@ export const L: { [locale: string]: Data } = {
             gallery: "Our Gallery",
         },
         home: {
-            wedding_day: "Wedding Day",
+            wedding_day: "We are getting married!",
             story: "Our Story",
             info: "Information",
             about_us: "About Us",
-            des1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at sapien ac leo pellentesque volutpat in ut erat. Aliquam faucibus ultrices auctor. Curabitur convallis tempus sem, at tincidunt ex vestibulum nec. Sed nisi arcu, interdum scelerisque felis ut, tempor pellentesque erat. Etiam viverra vestibulum leo, vitae aliquet urna cursus nec. Duis lobortis diam ut lacinia bibendum. Nulla fermentum odio dui, vel tristique sapien ornare non. Morbi molestie lobortis varius. Curabitur id molestie tortor, a convallis odio. Aenean mattis nunc nunc, scelerisque tincidunt sapien condimentum eu.",
-            des2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at sapien ac leo pellentesque volutpat in ut erat. Aliquam faucibus ultrices auctor. Curabitur convallis tempus sem, at tincidunt ex vestibulum nec. Sed nisi arcu, interdum scelerisque felis ut, tempor pellentesque erat. Etiam viverra vestibulum leo, vitae aliquet urna cursus nec. Duis lobortis diam ut lacinia bibendum. Nulla fermentum odio dui, vel tristique sapien ornare non. Morbi molestie lobortis varius. Curabitur id molestie tortor, a convallis odio. Aenean mattis nunc nunc, scelerisque tincidunt sapien condimentum eu.",
+            des1: "We met in church, a place blessed by the Lord, in 2013. Despite our characters being so different and opposite like sense and sensitivity, we draw to each other seeing how beautiful the heart and soul inside us that make the others become better and emerged in love. - Fanny",
+            des2: "After countless journeys and adventures, we finally decided to take the next step in our lives as husband and wife. What other way to celebrate this, than in the company of our beloved family and friends!",
             day_until: "Date We Getting Married",
             days: "Days",
             hours: "Hours",
@@ -103,7 +103,7 @@ export const L: { [locale: string]: Data } = {
             dress_code_data: "Semi-formal",
             video_link: "Video Link",
             // shuttle bus
-            shuttle_bus: "Shuttle Bus",
+            shuttle_bus: "Transportation",
             time: "Time",
             pick_up_location: "Pick Up Location",
             pick_up_location_data: "Sunny Bay Station exit A",
@@ -139,10 +139,10 @@ export const L: { [locale: string]: Data } = {
                 {
                     title: "Proposal",
                     memories: [
-                        {
-                            title: "sample title",
-                            description: "if you have something to say about this photos, you can give me a description and title"
-                        }
+                        // {
+                        //     title: "sample title",
+                        //     description: "if you have something to say about this photos, you can give me a description and title"
+                        // }
                     ]
                 },
                 {
@@ -188,7 +188,7 @@ export const L: { [locale: string]: Data } = {
             dress_code_data: "半正式",
             video_link: "直播片段",
             // shuttle bus
-            shuttle_bus: "接駁巴士",
+            shuttle_bus: "交通",
             time: "時間",
             pick_up_location: "接載地點",
             pick_up_location_data: "欣澳站 A 出口"
@@ -225,10 +225,10 @@ export const L: { [locale: string]: Data } = {
                 {
                     title: "求婚",
                     memories: [
-                        {
-                            title : "例子標題", 
-                            description : "如果你對這張照片有什麼想說的，你可以給我一個描述和標題"
-                        }
+                        // {
+                        //     title : "例子標題", 
+                        //     description : "如果你對這張照片有什麼想說的，你可以給我一個描述和標題"
+                        // }
                     ]
                 }, {
                     title: "婚紗照",

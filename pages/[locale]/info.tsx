@@ -5,6 +5,7 @@ import { useLocale } from "../../lib/locale";
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import Map from "../../public/images/map.svg"
 import Church from "../../public/images/church.svg"
+import Layout from "../../components/Layout";
 
 
 const Home: NextPage = () => {
@@ -19,7 +20,7 @@ const Home: NextPage = () => {
     }
 
     return (
-        <>
+        <Layout>
             {/* banner */}
             <div className="w-full z-10">
                 <div className="h-72 sm:h-144 relative w-full ">
@@ -52,20 +53,28 @@ const Home: NextPage = () => {
 
             {/* info */}
             <div id="details" className="z-10 relative flex flex-col items-center space-y-10  shadow-2xl p-5 xs:p-10 md:p-20 mt-20 w-5/6 sm:max-w-[40rem] bg-white">
-                <div className="absolute w-24 h-24 sm:w-48 sm:h-48 top-0 left-0  transform -translate-x-1/4 -translate-y-1/4">
+                {/* <div className="absolute w-24 h-24 sm:w-48 sm:h-48 top-0 left-0  transform -translate-x-1/4 -translate-y-1/4">
                     <Image src="https://res.cloudinary.com/yomaru/image/upload/e_shadow:90,x_20,y_20,co_rgb:6CA6B3/v1641534831/bryan/flower_bzofas.webp" layout="fill" className=""/>
-                    </div>
+                    </div> */}
 
                 <p className={`heading ${getLocale() =="en" ? "font-thankyou" : "font-wenyue"}`}>{L().info.details}</p>
 
-                <table className="text-pickled-bluewood font-wenyue">
+                <table className="text-pickled-bluewood font-wenyue w-full">
                     <tr >
-                        <td className={styles.info}>{`${ L().info.date_time} :`}</td>
-                        <td className="text-normal">{L().info.date_time_data}</td>
+                        <td className={styles.info}>{`Date :`}</td>
+                        <td className="text-normal">Saturday, 5th March, 2022</td>
                     </tr>
                     <tr>
                         <td className={styles.info}>{`${L().info.location} : `}</td>
                         <td className="text-normal">{L().info.location_data}</td>
+                    </tr>
+                    <tr>
+                        <td className={styles.info}>{`Ceremony : `}</td>
+                        <td className="text-normal">1:30 – 2:30PM at Wedding Pavilion</td>
+                    </tr>
+                    <tr>
+                        <td className={styles.info}>{`Cocktail Party : `}</td>
+                        <td className="text-normal">2:30 – 4:30PM at Marine</td>
                     </tr>
                     <tr>
                         <td className={styles.info}>{L().info.dress_code} ： </td>
@@ -73,19 +82,37 @@ const Home: NextPage = () => {
                     </tr>
                     <tr>
                         <td className={styles.info}>{L().info.video_link} ： </td>
-                        <td className="text-normal"><a href="https://www.youtube.com" className="text-gray-500 underline">https://linktovideo.example</a></td>
+                        <td className="text-normal"><a href="https://hku.zoom.us/j/95403904669" className="text-gray-500 underline">https://hku.zoom.us/j/95403904669</a></td>
+                    </tr>
+                    <tr>
+                        <td className={styles.info}>ZOOM ID ： </td>
+                        <td className="text-normal">954 0390 4669</td>
                     </tr>
                 </table>
 
                 <p className={`heading ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"}`}>{L().info.shuttle_bus}</p>
-                <table className="text-pickled-bluewood font-wenyue">
-                    <tr >
+                <table className="text-pickled-bluewood font-wenyue w-full">
+                    {/* <tr >
                         <td className={styles.info}>{L().info.time} : </td>
                         <td className="text-normal whitespace-nowrap">12 : 30 , 12 : 45</td>
-                    </tr>
-                    <tr>
+                    </tr> */}
+                    <tr className="w-full">
                         <td className={styles.info}>{L().info.pick_up_location} : </td>
                         <td className="text-normal whitespace-nowrap">{L().info.pick_up_location_data}</td>
+                    </tr>
+                    <p className="text-base sm:text-lg whitespace-nowrap font-bold mt-5 underline">Public transportation</p>
+                    <tr>
+                        <td className={styles.info}>Bus information : </td>
+                        <td className="text-normal whitespace-nowrap">Discovery Bay Bus DP03P</td>
+                    </tr>
+                    <tr>
+                        <td className={styles.info}>{L().info.time} : </td>
+                        <td className="text-normal whitespace-nowrap">12:35 PM, 1:05 PM</td>
+                    </tr>
+                    <p className="text-base sm:text-lg  whitespace-nowrap font-bold mt-5 underline">Complimentary shuttle bus</p>
+                    <tr>
+                        <td className={styles.info}>{L().info.time} : </td>
+                        <td className="text-normal whitespace-nowrap">12:45 PM</td>
                     </tr>
                 </table>
             </div>
@@ -113,7 +140,7 @@ const Home: NextPage = () => {
                 </div>
 
             </div>
-        </>
+        </Layout>
     )
 }
 
