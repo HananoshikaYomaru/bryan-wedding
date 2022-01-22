@@ -48,7 +48,7 @@ const Memory = ({ title, memories }: { title : string , memories: Memory[] }) =>
                     className="fixed inset-0 z-10 overflow-y-auto"
                     onClose={() => setIsOpen(false)}
                 >
-                    <div className="min-h-screen px-4 text-center">
+                    <div className="min-h-screen px-4 text-center z-30">
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -76,8 +76,9 @@ const Memory = ({ title, memories }: { title : string , memories: Memory[] }) =>
                             leave="ease-in duration-200"
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
+
                         >
-                            <div className="inline-block w-200 p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                            <div className="inline-block w-200 z-30 p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                                 <button onClick={() => setIsOpen(false)}><XCircleIcon className="w-6 h-6 text-gray-300"></XCircleIcon></button>
                                 <div className="flex flex-col w-full items-center space-y-5">
                                     <div className="relative w-full aspect-[4/3]" >

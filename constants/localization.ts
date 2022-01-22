@@ -146,11 +146,35 @@ export const L: { [locale: string]: Data } = {
                     ]
                 },
                 {
-                    title: "Pre-wedding",
+                    title: "Pre-Wedding",
                     memories: [
 
                     ]
-                }
+                },
+                {
+                    title: "Betrothal",
+                    memories: [
+
+                    ]
+                },
+                {
+                    title: "Date",
+                    memories: [
+
+                    ]
+                },
+                {
+                    title: "Graduation",
+                    memories: [
+
+                    ]
+                },
+                {
+                    title: "Our friends",
+                    memories: [
+
+                    ]
+                },
             ]
         }
     },
@@ -230,6 +254,18 @@ export const L: { [locale: string]: Data } = {
                         //     description : "如果你對這張照片有什麼想說的，你可以給我一個描述和標題"
                         // }
                     ]
+                }, {
+                    title: "婚紗照",
+                    memories: []
+                }, {
+                    title: "婚紗照",
+                    memories: []
+                }, {
+                    title: "婚紗照",
+                    memories: []
+                }, {
+                    title: "婚紗照",
+                    memories: []
                 }, {
                     title: "婚紗照",
                     memories: []

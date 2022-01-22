@@ -31,7 +31,7 @@ const Header = () => {
     {
       isTabletOrMobile && <div>
         <Popover className="relative mt-6  ml-5 z-20">
-          <Popover.Button><MenuAlt2Icon className="absolute w-8 h-8 text-grain-brown top-0 left-0"></MenuAlt2Icon></Popover.Button>
+          <Popover.Button><MenuAlt2Icon className="absolute w-8 h-8 text-grain-brown z-20 top-0 left-0"></MenuAlt2Icon></Popover.Button>
           <Popover.Panel className="absolute z-10 bg-stone-300 p-10 rounded-xl shadow mt-5">
             {
               ({ close }) => {
