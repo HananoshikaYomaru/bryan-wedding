@@ -67,7 +67,7 @@ const Home: NextPage = () => {
             </div>
 
             {/* description 1  */}
-            <div className="pl-5 py-5 md:pl-10 md:py-6 lg:pl-20 lg:py-10 ">
+            <div className="pl-5 md:pl-10 font-fireflylg:pl-20 lg:py-10 ">
               <p className="font-wenyue text-normal line-clamp-10 lg:line-clamp-15">
                 {L().home.des1}
               </p>
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
             </div>
 
             {/* description 2 */}
-            <div className="pr-5 py-5 md:pr-10 md:py-6 lg:pr-20 lg:py-10">
+            <div className="pr-5  md:pr-10 lg:pr-20 lg:py-10">
               <p className="font-wenyue text-normal line-clamp-10 lg:line-clamp-15 ">
                 {L().home.des2}
               </p>

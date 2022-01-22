@@ -13,10 +13,10 @@ const Home: NextPage = () => {
         "https://res.cloudinary.com/yomaru/image/upload/v1641534831/bryan/church1_lqadfp.webp",
         "https://res.cloudinary.com/yomaru/image/upload/v1641534831/bryan/church2_tzwvzo.webp"
     ]
-    const { getLocale , L } = useLocale()
+    const { getLocale, L } = useLocale()
     const [current, setCurrent] = useState(0)
-    const styles = { 
-        info : `w-48 h-10 text-normal whitespace-nowrap ${getLocale() == "en" ? "font-wenyue" : "font-chawan" }`, 
+    const styles = {
+        info: `w-48 h-10 text-normal whitespace-nowrap ${getLocale() == "en" ? "font-wenyue" : "font-chawan"}`,
     }
 
     return (
@@ -28,11 +28,11 @@ const Home: NextPage = () => {
                     <Image src={images[0]} layout="fill" objectFit='cover' objectPosition="50% 100%" className="absolute h-144 w-full object-cover opacity-50" />
                     <div className="absolute flex flex-col items-center justify-center inset-0 space-y-5">
                         <div className="flex flex-row items-center drop-shadow-md">
-                            <a href="#map"><p className={`text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base ${getLocale() == "en" ? "font-serif"  : "font-chawan"}`}>{L().info.location}</p></a>
+                            <a href="#map"><p className={`text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base ${getLocale() == "en" ? "font-serif" : "font-chawan"}`}>{L().info.location}</p></a>
                             <div className="w-1 h-1 rounded-full bg-pickled-bluewood"></div>
-                            <a href="#details"><p className={`text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base ${getLocale() == "en" ? "font-serif"  : "font-chawan"}`}>{L().info.details}</p></a>
+                            <a href="#details"><p className={`text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base ${getLocale() == "en" ? "font-serif" : "font-chawan"}`}>{L().info.details}</p></a>
                             <div className="w-1 h-1 rounded-full bg-pickled-bluewood"></div>
-                           <a href="#gallery"> <p className={`text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base ${getLocale() == "en" ? "font-serif"  : "font-chawan"}`}>{L().info.gallery}</p></a>
+                            <a href="#gallery"> <p className={`text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base ${getLocale() == "en" ? "font-serif" : "font-chawan"}`}>{L().info.gallery}</p></a>
                         </div>
                         <p className="font-serif font-bold text-2xl md:text-6xl  text-pickled-bluewood">{L().info.title}</p>
                     </div>
@@ -43,10 +43,10 @@ const Home: NextPage = () => {
             <Fragment >
                 <div className="w-5/6 sm:max-w-[32rem] flex flex-col items-center relative">
                     <div className="absolute z-[0] w-full sm:scale-[200%] sm:top-1/2 sm:left-[75%] pointer-events-none"  >
-                    <Image src={Map} layout="responsive"/>
+                        <Image src={Map} layout="responsive" />
                     </div>
-                <p id="map" className={`z-10 heading mt-20 ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"}`}>{L().info.location}</p>
-                <iframe className="z-20 w-full  aspect-1 rounded-3xl shadow-2xl mt-10" src="https://maps.google.com/maps?q=%20Auberge%20Discovery%20Bay%20Hotel&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight={0} marginWidth={0}></iframe>
+                    <p id="map" className={`z-10 heading mt-20 ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"}`}>{L().info.location}</p>
+                    <iframe className="z-20 w-full  aspect-1 rounded-3xl shadow-2xl mt-10" src="https://maps.google.com/maps?q=%20Auberge%20Discovery%20Bay%20Hotel&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight={0} marginWidth={0}></iframe>
                 </div>
             </Fragment>
 
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
                     <Image src="https://res.cloudinary.com/yomaru/image/upload/e_shadow:90,x_20,y_20,co_rgb:6CA6B3/v1641534831/bryan/flower_bzofas.webp" layout="fill" className=""/>
                     </div> */}
 
-                <p className={`heading ${getLocale() =="en" ? "font-thankyou" : "font-wenyue"}`}>{L().info.details}</p>
+                <p className={`heading ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"}`}>{L().info.details}</p>
 
                 <table className="text-pickled-bluewood font-wenyue w-full">
                     <tr >
@@ -68,14 +68,14 @@ const Home: NextPage = () => {
                         <td className={styles.info}>{`${L().info.location} : `}</td>
                         <td className="text-normal">{L().info.location_data}</td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                         <td className={styles.info}>{`Ceremony : `}</td>
                         <td className="text-normal">1:30 – 2:30PM at Wedding Pavilion</td>
                     </tr>
                     <tr>
                         <td className={styles.info}>{`Cocktail Party : `}</td>
                         <td className="text-normal">2:30 – 4:30PM at Marine</td>
-                    </tr>
+                    </tr> */}
                     <tr>
                         <td className={styles.info}>{L().info.dress_code} ： </td>
                         <td className="text-normal">Semi-formal</td>
@@ -90,26 +90,47 @@ const Home: NextPage = () => {
                     </tr>
                 </table>
 
+                <p className=" whitespace-nowrap text-pickled-bluewood mt-5 heading-sm font-thankyou space-x-2">Wedding Day plan</p>
+                <div className="flex flex-col sm:flex-row justify-between w-full font-wenyue">
+                    <div className="rounded  shadow border p-5">
+                        <p className="text-normal ">1:30 - 2:30 PM</p>
+                        <p className="heading-sm mb-5">Wedding Ceremony</p>
+                        <p className="text-small">A formal Christian wedding ceremony in the White Chapel</p>
+                    </div>
+                    <div className="w-10 h-10"></div>
+                    <div className="rounded  shadow border p-5">
+                        <p className="text-normal">2:30 - 4:30 PM</p>
+                        <p className="heading-sm mb-5">Cocktail Party</p>
+                        <p className="text-sm">A fun gathering with drinks, light refreshments and games</p>
+                    </div>
+                </div>
+
                 <p className={`heading ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"}`}>{L().info.shuttle_bus}</p>
                 <table className="text-pickled-bluewood font-wenyue w-full">
                     {/* <tr >
                         <td className={styles.info}>{L().info.time} : </td>
                         <td className="text-normal whitespace-nowrap">12 : 30 , 12 : 45</td>
                     </tr> */}
-                    <tr className="w-full">
+                    <tr >
                         <td className={styles.info}>{L().info.pick_up_location} : </td>
-                        <td className="text-normal whitespace-nowrap">{L().info.pick_up_location_data}</td>
+                        <td className="text-normal ">{L().info.pick_up_location_data}</td>
                     </tr>
-                    <p className="text-base sm:text-lg whitespace-nowrap font-bold mt-5 underline">Public transportation</p>
+                    <tr>
+                        <td colSpan={2}><p className="text-base sm:text-lg whitespace-nowrap font-bold mt-5 underline ">Public transportation</p></td>
+                    </tr>
                     <tr>
                         <td className={styles.info}>Bus information : </td>
                         <td className="text-normal whitespace-nowrap">Discovery Bay Bus DP03P</td>
                     </tr>
                     <tr>
                         <td className={styles.info}>{L().info.time} : </td>
-                        <td className="text-normal whitespace-nowrap">12:35 PM, 1:05 PM</td>
+                        <td className="text-normal ">12:35 PM, 1:05 PM</td>
                     </tr>
-                    <p className="text-base sm:text-lg  whitespace-nowrap font-bold mt-5 underline">Complimentary shuttle bus</p>
+                    <tr>
+                        <td colSpan={2}>
+                            <p className="text-base sm:text-lg  whitespace-nowrap font-bold mt-5 underline ">Complimentary shuttle bus</p>
+                        </td>
+                    </tr>
                     <tr>
                         <td className={styles.info}>{L().info.time} : </td>
                         <td className="text-normal whitespace-nowrap">12:45 PM</td>
@@ -121,7 +142,7 @@ const Home: NextPage = () => {
 
             <div id="gallery" className="flex flex-col items-center mb-20 w-full relative">
                 <div className="absolute w-32 sm:w-64 opacity-50 left-[10%] -top-[10%] sm:-top-[20%] pointer-events-none">
-                <Image src={Church} layout="responsive" className="" />
+                    <Image src={Church} layout="responsive" className="" />
 
                 </div>
                 <p className={`heading mt-20 mb-10 ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"}`}>{L().info.gallery}</p>
@@ -129,11 +150,11 @@ const Home: NextPage = () => {
                     <button onClick={() => {
                         setCurrent(current - 1 == -1 ? images.length - 1 : current - 1)
                     }} className="h-fit"><ChevronLeftIcon className="w-6 h-6 rounded-full hover:bg-wheat transition ease-in-out duration-300"></ChevronLeftIcon></button>
-                   
-                   <div className="aspect-[2/1] w-full relative">
+
+                    <div className="aspect-[2/1] w-full relative">
                         <Image src={images[current]} layout="fill" objectFit="cover" />
-                   </div>
-                   
+                    </div>
+
                     <button onClick={() => {
                         setCurrent(current + 1 == images.length ? 0 : current + 1)
                     }} className="h-fit "><ChevronRightIcon className="w-6 h-6 rounded-full hover:bg-wheat transition ease-in-out duration-300"></ChevronRightIcon></button>
