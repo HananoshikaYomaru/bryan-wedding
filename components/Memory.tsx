@@ -22,7 +22,7 @@ const Memory = ({ title, memories }: { title : string , memories: Memory[] }) =>
         setIsOpen(true);
     }
     const Box = ({ i }: { i: number }) => {
-        return <div className="h-16 w-16 sm:h-32 sm:w-32 hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200 relative" onClick={() => openImage(i)}>
+        return <div className="h-auto w-auto aspect-[1/1] hover:scale-[1.1] transition-transform ease-in-out duration-600 bg-red-200 relative" onClick={() => openImage(i)}>
             <Image src={memories[i].thumbnail} layout="fill" objectFit="cover" />
         </div>
     }
@@ -30,7 +30,7 @@ const Memory = ({ title, memories }: { title : string , memories: Memory[] }) =>
     return (
         <div id={title} className="w-5/6 h-fit flex flex-col items-center mt-20">
             <p className={`heading ${getLocale() == "en" ? "font-thankyou " : "font-wenyue"}`}>{title}</p>
-            <div className="grid grid-cols-4 gap-3 sm:gap-6 mt-10 ">
+            <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-6 mt-10 w-full lg:w-[75%] ">
                 {
                     memories.map((_, index) => {
                         // if (![7, 10, 11].includes(index)) {
