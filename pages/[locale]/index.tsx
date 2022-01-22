@@ -16,8 +16,9 @@ const Home: NextPage = () => {
   const data = {
     banner: "https://res.cloudinary.com/yomaru/image/upload/h_2160,c_scale/v1641622736/pre-wedding/Copy_of_P1322666_e_d8zq08.webp",
     image1: "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532713/pre-wedding/Copy_of_P1333043_e_nahexf.webp",
-    image2: "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532710/pre-wedding/Copy_of_P1333422_e_uxmbtm.webp",
-    image3: "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532715/pre-wedding/Copy_of_P1322586_e_fybczl.webp",
+    image2: "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532709/pre-wedding/Copy_of_P1333156_e_gxpb0t.webp",
+    // image 3 is the middle
+    image3: "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532710/pre-wedding/Copy_of_P1333422_e_uxmbtm.webp",
   }
 
   return (
@@ -25,8 +26,9 @@ const Home: NextPage = () => {
 
       {/* the banner  */}
       <div className="w-full z-10">
-        <div className="h-64 md:h-144 relative w-full ">
-          <div className="absolute h-64 md:h-144 bg-blue-200 w-full"></div>
+        {/* aspect-[width/height] */}
+        <div className="aspect-[4629/2603] relative w-full">
+          <div className="absolute aspect-[4629/2603] bg-blue-200 w-full"></div>
           {/* <img src="/images/P1322774_e.jpg" className="absolute h-144 w-full object-cover opacity-50" ></img> */}
           <Image src={data.banner} layout="fill" objectFit='cover' objectPosition="50% 35%" className="absolute opacity-50" />
           {/* <div className="backdrop-grayscale h-10 w-10"></div> */}
@@ -53,6 +55,7 @@ const Home: NextPage = () => {
         <div className="absolute w-32 lg:w-64 top-[100%] sm:top-[110%] right-4/5 sm:right-0 opacity-50">
           <Image src={Wine} layout="responsive" className="" />
         </div>
+
         <p className={`mb-10 heading ${getLocale() == "en" ? "font-thankyou" : "font-wenyue"} `}>{L().home.about_us}</p>
         <div className="relative h-200 lg:h-300 w-full">
 
@@ -62,8 +65,10 @@ const Home: NextPage = () => {
                 <Image src={data.image1} layout='fill' objectFit='cover'></Image>
               </div>
             </div>
+
+            {/* description 1  */}
             <div className="pl-5 py-5 md:pl-10 md:py-6 lg:pl-20 lg:py-10 ">
-              <p className="font-wenyue text-xs sm:text-sm line-clamp-10 lg:line-clamp-15">
+              <p className="font-wenyue text-normal line-clamp-10 lg:line-clamp-15">
                 {L().home.des1}
               </p>
             </div>
@@ -75,8 +80,10 @@ const Home: NextPage = () => {
                 <Image src={data.image2} layout='fill' objectFit='cover'></Image>
               </div>
             </div>
+
+            {/* description 2 */}
             <div className="pr-5 py-5 md:pr-10 md:py-6 lg:pr-20 lg:py-10">
-              <p className="font-wenyue text-xs sm:text-sm line-clamp-10 lg:line-clamp-15 ">
+              <p className="font-wenyue text-normal line-clamp-10 lg:line-clamp-15 ">
                 {L().home.des2}
               </p>
             </div>

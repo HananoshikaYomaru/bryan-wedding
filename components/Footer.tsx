@@ -13,7 +13,7 @@ const Footer = () => {
                 <Image src={flower} width={50} height={50} />
             </div> */}
         <div className="flex flex-col   font-wenyue w-fit items-center text-sky-100 text-xs mt-10 sm:text-sm">
-            <p>copyright @ 2022 YomaruHananoshika. All rights reversed.</p>
+            <p>Copyright © 2022 YomaruHananoshika. All rights reversed.</p>
             <a className="text-gray-400 underline" href="mailto:mlkyeung@connect.ust.hk">mlkyeung@connect.ust.hk</a>
         </div>
         </div>

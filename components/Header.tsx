@@ -21,7 +21,7 @@ const Header = () => {
         <div className="absolute flex flex-row space-x-16 center">
           <Link href={`/${getLocale()}`}><a className="bartext" >{L().layout.home}</a></Link>
           <Link href={`/${getLocale()}/info`}><a className="bartext">{L().layout.information}</a></Link>
-          {/* <Link href={`/${getLocale()}/events`}><a className="bartext">{L().layout.events}</a></Link> */}
+          <Link href={`/${getLocale()}/events`}><a className="bartext">{L().layout.events}</a></Link>
           {/* <Link href={`/${getLocale()}/story`}><a className="bartext" >{L().layout.story}</a></Link> */}
           <Link href={`/${getLocale()}/gallery`}><a className="bartext" >{L().layout.gallery}</a></Link>
         </div>
@@ -39,7 +39,7 @@ const Header = () => {
                   <div className="flex flex-col space-y-5">
                     <Link href={`/${getLocale()}`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>{L().layout.home}</a></Link>
                     <Link href={`/${getLocale()}/info`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200  whitespace-nowrap" onClick={()=>close()}>{L().layout.information}</a></Link>
-                    {/* <Link href={`/${getLocale()}/events`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>{L().layout.events}</a></Link> */}
+                    <Link href={`/${getLocale()}/events`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap" onClick={()=>close()}>{L().layout.events}</a></Link>
                     {/* <Link href={`/${getLocale()}/story`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>{L().layout.story}</a></Link> */}
                     <Link href={`/${getLocale()}/gallery`}><a className="font-copperplate text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap"  onClick={()=>close()}>{L().layout.gallery}</a></Link>
                   </div>
@@ -50,7 +50,7 @@ const Header = () => {
         </Popover>
       </div>
     }
-    {/* <button className="font-wenyue text-grain-brown absolute top-1/2 right-0  transform -translate-y-1/2 mr-5 sm:mr-12" onClick={() => changeLocale(getLocale() == "en" ? "zh-hk" : "en")}>{getLocale() == "en" ? " 🇭🇰 中文" : " 🇬🇧 English"}</button> */}
+    <button className="font-wenyue text-grain-brown absolute top-1/2 right-0  transform -translate-y-1/2 mr-5 sm:mr-12" onClick={() => changeLocale(getLocale() == "en" ? "zh-hk" : "en")}>{getLocale() == "en" ? " 🇭🇰 中文" : " 🇬🇧 English"}</button>
   </div>
 }
 
