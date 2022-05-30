@@ -1,0 +1,17 @@
+.route {
+  @apply text-grain-brown text-base hover:scale-110 transition ease-in-out duration-150;
+}
+
+.route2 {
+  @apply text-pickled-bluewood hover:bg-slate-200 whitespace-nowrap;
+}
+
+html[lang="en"] .route,
+html[lang="en"] .route2 {
+  @apply font-copperplate;
+}
+
+html[lang="zh"] .route,
+html[lang="zh"] .route2 {
+  @apply font-wenyue;
+}

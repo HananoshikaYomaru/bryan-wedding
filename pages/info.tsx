@@ -1,22 +1,24 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import { Fragment, useState } from "react";
-import { useLocale } from "../../lib/locale";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
-import Map from "../../public/images/map.svg";
-import Church from "../../public/images/church.svg";
-import Layout from "../../components/Layout";
+import Map from "../public/images/map.svg";
+import Church from "../public/images/church.svg";
+import Layout from "../components/Layout";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import userConfig from "../i18next.config";
 
 const Home: NextPage = () => {
   const images = [
     "https://res.cloudinary.com/yomaru/image/upload/v1641534831/bryan/church1_lqadfp.webp",
     "https://res.cloudinary.com/yomaru/image/upload/v1641534831/bryan/church2_tzwvzo.webp",
   ];
-  const { getLocale, L } = useLocale();
   const [current, setCurrent] = useState(0);
+  const { t, i18n } = useTranslation(["common", "information"]);
   const styles = {
     info: `w-48 h-10 text-normal whitespace-nowrap ${
-      getLocale() == "en" ? "font-wenyue" : "font-chawan"
+      i18n.language == "en" ? "font-wenyue" : "font-chawan"
     }`,
   };
 
@@ -38,36 +40,35 @@ const Home: NextPage = () => {
               <a href="#map">
                 <p
                   className={`text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base ${
-                    getLocale() == "en" ? "font-serif" : "font-chawan"
+                    i18n.language == "en" ? "font-serif" : "font-chawan"
                   }`}
                 >
-                  {L().info.location}
+                  {t("location")}
                 </p>
               </a>
               <div className="w-1 h-1 rounded-full bg-pickled-bluewood"></div>
               <a href="#details">
                 <p
                   className={`text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base ${
-                    getLocale() == "en" ? "font-serif" : "font-chawan"
+                    i18n.language == "en" ? "font-serif" : "font-chawan"
                   }`}
                 >
-                  {L().info.details}
+                  {t("details")}
                 </p>
               </a>
               <div className="w-1 h-1 rounded-full bg-pickled-bluewood"></div>
               <a href="#gallery">
-                {" "}
                 <p
                   className={`text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base ${
-                    getLocale() == "en" ? "font-serif" : "font-chawan"
+                    i18n.language == "en" ? "font-serif" : "font-chawan"
                   }`}
                 >
-                  {L().info.gallery}
+                  {t("gallery")}
                 </p>
               </a>
             </div>
             <p className="font-serif font-bold text-2xl md:text-6xl  text-pickled-bluewood">
-              {L().info.title}
+              {t("title")}
             </p>
           </div>
         </div>
@@ -82,10 +83,10 @@ const Home: NextPage = () => {
           <p
             id="map"
             className={`z-10 heading mt-20 ${
-              getLocale() == "en" ? "font-thankyou" : "font-wenyue"
+              i18n.language == "en" ? "font-thankyou" : "font-wenyue"
             }`}
           >
-            {L().info.location}
+            {t("location")}
           </p>
           <iframe
             className="z-20 w-full  aspect-1 rounded-3xl shadow-2xl mt-10"
@@ -109,10 +110,10 @@ const Home: NextPage = () => {
 
         <p
           className={`heading ${
-            getLocale() == "en" ? "font-thankyou" : "font-wenyue"
+            i18n.language == "en" ? "font-thankyou" : "font-wenyue"
           }`}
         >
-          {L().info.details}
+          {t("details")}
         </p>
 
         <table className="text-pickled-bluewood font-wenyue w-full">
@@ -121,23 +122,15 @@ const Home: NextPage = () => {
             <td className="text-normal">Saturday, 30th July, 2022</td>
           </tr>
           <tr>
-            <td className={styles.info}>{`${L().info.location} : `}</td>
-            <td className="text-normal">{L().info.location_data}</td>
+            <td className={styles.info}>{`${t("location")} : `}</td>
+            <td className="text-normal">{t("location_data")}</td>
           </tr>
-          {/* <tr>
-                        <td className={styles.info}>{`Ceremony : `}</td>
-                        <td className="text-normal">1:30 – 2:30PM at Wedding Pavilion</td>
-                    </tr>
-                    <tr>
-                        <td className={styles.info}>{`Cocktail Party : `}</td>
-                        <td className="text-normal">2:30 – 4:30PM at Marine</td>
-                    </tr> */}
           <tr>
-            <td className={styles.info}>{L().info.dress_code} ： </td>
+            <td className={styles.info}>{t("dress-code")} ： </td>
             <td className="text-normal">Semi-formal</td>
           </tr>
           <tr>
-            <td className={styles.info}>{L().info.video_link} ： </td>
+            <td className={styles.info}>{t("video-link")} ： </td>
             <td className="text-normal">
               <a
                 href="https://hku.zoom.us/j/95403904669"
@@ -154,7 +147,7 @@ const Home: NextPage = () => {
         </table>
 
         <p className=" whitespace-nowrap text-pickled-bluewood mt-5 heading-sm font-thankyou space-x-2">
-          Wedding Day plan
+          Wedding Day Plan
         </p>
         <div className="flex flex-col sm:flex-row justify-between w-full font-wenyue">
           <div className="rounded  shadow border p-5">
@@ -176,10 +169,10 @@ const Home: NextPage = () => {
 
         <p
           className={`heading ${
-            getLocale() == "en" ? "font-thankyou" : "font-wenyue"
+            i18n.language == "en" ? "font-thankyou" : "font-wenyue"
           }`}
         >
-          {L().info.shuttle_bus}
+          {t("shuttle_bus")}
         </p>
         <table className="text-pickled-bluewood font-wenyue w-full">
           {/* <tr >
@@ -187,8 +180,8 @@ const Home: NextPage = () => {
                         <td className="text-normal whitespace-nowrap">12 : 30 , 12 : 45</td>
                     </tr> */}
           <tr>
-            <td className={styles.info}>{L().info.pick_up_location} : </td>
-            <td className="text-normal ">{L().info.pick_up_location_data}</td>
+            <td className={styles.info}>{t("pick_up_location")} : </td>
+            <td className="text-normal ">{t("pick_up_location_data")}</td>
           </tr>
           <tr>
             <td colSpan={2}>
@@ -204,7 +197,7 @@ const Home: NextPage = () => {
             </td>
           </tr>
           <tr>
-            <td className={styles.info}>{L().info.time} : </td>
+            <td className={styles.info}>{t("time")} : </td>
             <td className="text-normal ">12:35 PM, 1:05 PM</td>
           </tr>
           <tr>
@@ -215,7 +208,7 @@ const Home: NextPage = () => {
             </td>
           </tr>
           <tr>
-            <td className={styles.info}>{L().info.time} : </td>
+            <td className={styles.info}>{t("time")} : </td>
             <td className="text-normal whitespace-nowrap">12:45 PM</td>
           </tr>
         </table>
@@ -232,10 +225,10 @@ const Home: NextPage = () => {
         </div>
         <p
           className={`heading mt-20 mb-10 ${
-            getLocale() == "en" ? "font-thankyou" : "font-wenyue"
+            i18n.language == "en" ? "font-thankyou" : "font-wenyue"
           }`}
         >
-          {L().info.gallery}
+          {t("gallery")}
         </p>
         <div className=" flex flex-row w-5/6 sm:w-2/3 justify-center space-x-5 items-center">
           <button
@@ -264,5 +257,18 @@ const Home: NextPage = () => {
     </Layout>
   );
 };
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(
+        locale,
+        ["common", "index"],
+        userConfig
+      )),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 export default Home;

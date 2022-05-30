@@ -53,7 +53,7 @@ module.exports = {
         "beige": "#F6F3E2",
       },
       fontFamily: {
-        // ...defaultTheme.fontFamily ,
+        ...defaultTheme.fontFamily,
         "thankyou": ["thank you"],
         "wenyue": ["wenyue"],
         "copperplate": ["copperplate"],

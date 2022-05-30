@@ -1,6 +1,7 @@
 {
   "name": "bryan",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,14 +13,11 @@
     "@heroicons/react": "^1.0.5",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.0",
-    "masonic": "^3.6.1",
     "moment": "^2.29.1",
-    "next": "12.0.7",
-    "next-images": "^1.8.4",
+    "next": "^12.0.7",
+    "next-i18next": "^11.0.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-masonry-component": "^6.3.0",
-    "react-responsive": "^9.0.0-beta.5"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/node": "17.0.6",
@@ -30,5 +28,11 @@
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.8",
     "typescript": "4.5.4"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
   }
 }

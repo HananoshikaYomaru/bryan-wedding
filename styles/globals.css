@@ -2,62 +2,66 @@
 @tailwind components;
 
 @font-face {
-    font-family: "thank you";
-    src: url("../public/fonts/Thank you.ttf");
+  font-family: "thank you";
+  src: url("../public/fonts/Thank you.ttf");
 }
 
 @font-face {
-    font-family: "wenyue";
-    src: url("../public/fonts/WenyueType.otf");
-}
-
-@font-face { 
-    font-family : "copperplate" ; 
-    src : url("../public/fonts/copperplatebold.ttf") ; 
+  font-family: "wenyue";
+  src: url("../public/fonts/WenyueType.otf");
 }
 
 @font-face {
-    font-family: "amibata";
-    src: url("../public/fonts/Amibata.otf");
+  font-family: "copperplate";
+  src: url("../public/fonts/copperplatebold.ttf");
 }
 
 @font-face {
-    font-family: "firefly";
-    src: url("../public/fonts/firefly.otf");
+  font-family: "amibata";
+  src: url("../public/fonts/Amibata.otf");
 }
 
-@font-face { 
-    font-family : "melinda" ; 
-    src : url("../public/fonts/Melinda.otf");
+@font-face {
+  font-family: "firefly";
+  src: url("../public/fonts/firefly.otf");
 }
 
-@font-face { 
-    font-family : "chawan" ; 
-    src : url("../public/fonts/chawan.ttf") ;
+@font-face {
+  font-family: "melinda";
+  src: url("../public/fonts/Melinda.otf");
+}
+
+@font-face {
+  font-family: "chawan";
+  src: url("../public/fonts/chawan.ttf");
 }
 
 @tailwind utilities;
 
-.bartext { 
-    @apply font-copperplate text-grain-brown text-lg
+.center {
+  @apply left-1/2 top-1/2  transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap;
 }
 
-.center { 
-    @apply left-1/2 top-1/2  transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap
+.heading {
+  @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-2xl sm:text-3xl md:text-5xl;
 }
 
-.heading { 
-    @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-2xl sm:text-3xl md:text-5xl
+html[lang="zh"] .heading {
+  @apply font-wenyue;
 }
 
-.heading-sm { 
-    @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-lg sm:text-lg md:text-2xl
+html[lang="en"] .heading {
+  @apply font-thankyou;
 }
 
-.text-normal { 
-    @apply text-sm sm:text-base md:text-lg text-pickled-bluewood
+.heading-sm {
+  @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-lg sm:text-lg md:text-2xl;
 }
 
-.text-small { 
-    @apply text-xs sm:text-sm md:text-base text-pickled-bluewood
+.text-normal {
+  @apply text-sm sm:text-base md:text-lg text-pickled-bluewood;
+}
+
+.text-small {
+  @apply text-xs sm:text-sm md:text-base text-pickled-bluewood;
 }
