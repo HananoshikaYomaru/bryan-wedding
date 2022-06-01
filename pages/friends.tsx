@@ -44,7 +44,7 @@ const Home: NextPage = () => {
             className="w-1/2"
           />
           <div>
-            <p className="heading">{t("sharon_liu")}</p>
+            <p id="name">{t("sharon_liu")}</p>
             <p className="font-bold mb-3">{t("maid_of_honours")}</p>
             <p>{t("sharon_des")}</p>
           </div>
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
           id="people"
         >
           <div>
-            <p className="heading">{t("alex_fung")}</p>
+            <p id="name">{t("alex_fung")}</p>
             <p className="font-bold mb-3">{t("best_man")}</p>
             <p>{t("alex_des")}</p>
           </div>

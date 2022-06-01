@@ -140,7 +140,7 @@ const Home: NextPage = () => {
             return (
               <Fragment key={title}>
                 <p className="heading">{t(title)}</p>
-                <div className="w-full grid grid-cols-3 gap-8 mb-20 mt-5">
+                <div className="w-full grid grid-cols-3 gap-5 sm:gap-8 mb-20 mt-5">
                   {sectionImages[index].map((image, index) => (
                     <Thumbnail
                       key={image.thumbnail}

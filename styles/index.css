@@ -76,7 +76,7 @@ html[lang="en"] #details #sub-heading {
 }
 
 #memory #title {
-  @apply text-lg sm:text-xl lg:text-2xl whitespace-nowrap;
+  @apply text-lg sm:text-xl lg:text-2xl whitespace-nowrap overflow-visible;
 }
 
 html[lang="en"] #memory #title {
@@ -91,5 +91,17 @@ div[data-page="/events"] #banner #title,
 div[data-page="/story"] #banner #title,
 div[data-page="/friends"] #banner #title,
 div[data-page="/gallery"] #banner #title {
-  @apply absolute flex flex-col items-center justify-center inset-0 space-y-5;
+  @apply absolute flex flex-col items-center justify-center inset-0 space-y-5 overflow-visible;
+}
+
+#content #name {
+  @apply text-pickled-bluewood  drop-shadow whitespace-nowrap  text-3xl sm:text-4xl md:text-5xl  overflow-visible;
+}
+
+html[lang="zh"] #content #name {
+  @apply font-wenyue;
+}
+
+html[lang="en"] #content #name {
+  @apply font-thankyou;
 }
