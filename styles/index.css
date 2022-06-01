@@ -11,7 +11,7 @@ html[lang="zh"] div[data-page="/"] #banner a {
 }
 
 #content .heading {
-  @apply text-pickled-bluewood  drop-shadow max-w-[9/10]  text-3xl sm:text-4xl md:text-5xl text-center;
+  @apply text-pickled-bluewood  drop-shadow max-w-[90vw]  text-3xl sm:text-4xl md:text-5xl text-center;
 }
 
 #banner a {

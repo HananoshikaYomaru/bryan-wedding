@@ -118,7 +118,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         {/* count down */}
-        <div className="mt-20 w-full h-fit flex flex-col items-center p-10 space-y-10 z-10 mb-10">
+        <div className="mt-20 w-full h-fit flex flex-col items-center  space-y-10 z-10 mb-10">
           <p className="heading">
             {time.milliseconds() < 0 ? t("married") : t("days_until")}
           </p>
