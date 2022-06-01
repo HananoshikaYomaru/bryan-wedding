@@ -32,7 +32,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       {/* the banner  */}
-      <div className="w-full z-10">
+      <div className="w-full" id="banner">
         {/* aspect-[width/height] */}
         <div className="aspect-[4629/2603] relative w-full">
           <div className="absolute aspect-[4629/2603] bg-blue-200 w-full"></div>
@@ -53,26 +53,22 @@ const Home: NextPage = () => {
                 Bryan & Fanny
               </p>
               <Link href="/info">
-                <a
-                  className={`bg-soapstone px-5 py-2 text-pickled-bluewood drop-shadow rounded-xl text:text-sm md:text-xl ${
-                    i18n.language == "en" ? "font-copperplate" : "font-wenyue"
-                  }`}
-                >
-                  {t("info")}
-                </a>
+                <a>{t("info")}</a>
               </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* photos  */}
-      <div className="w-3/4 2xl:w-1/2 mt-10 flex flex-col items-center max-w-6xl relative">
+      {/* content  */}
+      <div
+        id="content"
+        className="w-3/4 2xl:w-1/2 mt-10 flex flex-col items-center max-w-6xl relative"
+      >
         {/* background images */}
         <div className="absolute w-32 lg:w-64 top-[25%] sm:top-1/2 -left-[20%]  sm:left-[10%] rotate-[-30deg] opacity-50">
           <Image src={Shoe} layout="responsive" className="" />
         </div>
-
         <div className="absolute w-32 lg:w-64 top-[68%] sm:top-[20%] right-[20%] opacity-50">
           <Image src={Ring} layout="responsive" className="" />
         </div>
@@ -80,13 +76,8 @@ const Home: NextPage = () => {
           <Image src={Wine} layout="responsive" className="" />
         </div>
 
-        <p
-          className={`mb-10 heading ${
-            i18n.language == "en" ? "font-thankyou" : "font-wenyue"
-          } `}
-        >
-          {t("about_us")}
-        </p>
+        <p className="mb-10 heading">{t("about_us")}</p>
+
         <div className="relative h-200 lg:h-300 w-full">
           <div className="absolute h-48 xs:h-56 sm:h-96 lg:h-144 w-full flex flex-row">
             <div className="relative h-full  aspect-[3/4]  ">
@@ -100,10 +91,8 @@ const Home: NextPage = () => {
             </div>
 
             {/* description 1  */}
-            <div className="pl-5 md:pl-10 font-fireflylg:pl-20 lg:py-10 ">
-              <p className="font-wenyue text-normal line-clamp-10 lg:line-clamp-15">
-                {t("des1")}
-              </p>
+            <div id="description" className="pl-5 md:pl-10 lg:pl-20 lg:py-10 ">
+              <p>{t("des1")}</p>
             </div>
           </div>
 
@@ -120,9 +109,7 @@ const Home: NextPage = () => {
 
             {/* description 2 */}
             <div className="pr-5  md:pr-10 lg:pr-20 lg:py-10">
-              <p className="font-wenyue text-normal line-clamp-10 lg:line-clamp-15 ">
-                {t("des2")}
-              </p>
+              <p>{t("des2")}</p>
             </div>
           </div>
 
@@ -130,36 +117,28 @@ const Home: NextPage = () => {
             <Image src={data.center} layout="fill" objectFit="cover"></Image>
           </div>
         </div>
-      </div>
-      {/* count down */}
-      <div className="mt-20 w-full h-fit flex flex-col items-center p-10 space-y-10 z-10 mb-10">
-        <p className={`heading`}>
-          {time.milliseconds() < 0 ? t("married") : t("days_until")}
-        </p>
-        {time.milliseconds() > 0 ? (
-          <Timer />
-        ) : (
-          <div className="flex flex-col items-center space-y-3">
-            <p className="font-wenyue">{t("married_text_1")}</p>
-            <div className="flex flex-row space-x-8 flex-wrap">
-              {routes
-                .filter((r) => r.path != "/")
-                .map((r) => (
-                  <Link href={r.path} key={r.path}>
-                    <a
-                      className={`hover:scale-110 whitespace-nowrap transition ease-in-out duration-150 ${
-                        i18n.language == "en"
-                          ? "font-copperplate"
-                          : "font-wenyue"
-                      }`}
-                    >
-                      {r.text}
-                    </a>
-                  </Link>
-                ))}
+        {/* count down */}
+        <div className="mt-20 w-full h-fit flex flex-col items-center p-10 space-y-10 z-10 mb-10">
+          <p className="heading">
+            {time.milliseconds() < 0 ? t("married") : t("days_until")}
+          </p>
+          {time.milliseconds() > 0 ? (
+            <Timer />
+          ) : (
+            <div className="flex flex-col items-center space-y-3">
+              <p className="font-wenyue">{t("married_text_1")}</p>
+              <div className="flex flex-row space-x-8 flex-wrap  justify-center">
+                {routes
+                  .filter((r) => r.path != "/")
+                  .map((r) => (
+                    <Link href={r.path} key={r.path}>
+                      <a id="route">{r.text}</a>
+                    </Link>
+                  ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </Layout>
   );

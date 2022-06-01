@@ -1,0 +1,95 @@
+div[data-page="/"] #banner a {
+  @apply bg-soapstone px-5 py-2 text-pickled-bluewood drop-shadow rounded-xl text-sm md:text-xl;
+}
+
+html[lang="en"] div[data-page="/"] #banner a {
+  @apply font-copperplate;
+}
+
+html[lang="zh"] div[data-page="/"] #banner a {
+  @apply font-wenyue;
+}
+
+#content .heading {
+  @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-3xl sm:text-4xl md:text-5xl;
+}
+
+#banner a {
+  @apply font-wenyue text-pickled-bluewood mx-5 hover:underline text-xs sm:text-base;
+}
+
+#banner #title {
+  @apply whitespace-nowrap font-serif font-bold text-3xl sm:text-6xl  text-pickled-bluewood;
+}
+
+html[lang="zh"] #content .heading {
+  @apply font-wenyue;
+}
+
+html[lang="en"] #content .heading {
+  @apply font-thankyou;
+}
+
+#content a#route {
+  @apply hover:scale-110 whitespace-nowrap transition ease-in-out duration-150;
+}
+
+html[lang="zh"] #content a#route {
+  @apply font-wenyue;
+}
+
+html[lang="en"] #content a#route {
+  @apply font-copperplate;
+}
+
+#content p:not(.heading),
+#modal p:not(.heading) {
+  @apply font-wenyue text-sm sm:text-base md:text-lg text-pickled-bluewood line-clamp-10 lg:line-clamp-15;
+}
+
+#timer div {
+  @apply w-16 h-20 sm:w-32 sm:h-40 bg-white rounded-lg shadow-xl flex flex-col items-center justify-center;
+}
+
+#event #title {
+  @apply text-pickled-bluewood  drop-shadow  text-2xl text-center;
+}
+
+#event #description {
+  @apply text-xs sm:text-sm md:text-base text-pickled-bluewood;
+}
+
+#details #sub-heading {
+  @apply text-lg sm:text-xl md:text-2xl;
+}
+
+html[lang="zh"] #details #sub-heading {
+  @apply font-wenyue;
+}
+
+html[lang="en"] #details #sub-heading {
+  @apply font-thankyou;
+}
+
+#memory {
+  @apply max-w-[1/10];
+}
+
+#memory #title {
+  @apply text-lg sm:text-xl lg:text-2xl whitespace-nowrap;
+}
+
+html[lang="en"] #memory #title {
+  @apply font-thankyou;
+}
+
+html[lang="zh"] #memory #title {
+  @apply font-wenyue;
+}
+
+div[data-page="/events"] #banner #title,
+div[data-page="/story"] #banner #title,
+div[data-page="/friends"] #banner #title,
+div[data-page="/gallery"] #banner #title {
+  @apply absolute flex flex-col items-center justify-center inset-0 space-y-5;
+}

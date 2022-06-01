@@ -38,21 +38,7 @@
 
 @tailwind utilities;
 
-.center {
-  @apply left-1/2 top-1/2  transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap;
-}
-
-.heading {
-  @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-2xl sm:text-3xl md:text-5xl;
-}
-
-html[lang="zh"] .heading {
-  @apply font-wenyue;
-}
-
-html[lang="en"] .heading {
-  @apply font-thankyou;
-}
+@import "index.css";
 
 html[lang="en"] div[data-page="/info"] a > p {
   @apply font-serif;
@@ -62,22 +48,6 @@ html[lang="zh"] div[data-page="/info"] a > p {
   @apply font-chawan;
 }
 
-.heading-sm {
-  @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-2xl;
-}
-
-.text-normal {
-  @apply text-sm sm:text-base md:text-lg text-pickled-bluewood;
-}
-
-.text-small {
-  @apply text-xs sm:text-sm md:text-base text-pickled-bluewood;
-}
-
 div[data-page="/info"] tr > td:first-child {
-  @apply w-48 h-10 text-normal whitespace-nowrap;
-}
-
-div[data-page="/info"] tr > td:last-child {
-  @apply text-normal;
+  @apply w-48 h-10  whitespace-nowrap;
 }

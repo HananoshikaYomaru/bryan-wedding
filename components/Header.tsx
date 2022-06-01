@@ -24,7 +24,7 @@ const Header = () => {
       ></Image>
 
       {/* routes when screen is large */}
-      <div className="absolute flex-row space-x-16 center hidden xl:flex">
+      <div className="absolute flex-row space-x-16 left-1/2 top-1/2  transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap hidden xl:flex">
         {routes.map((r) => (
           <Link href={r.path} key={r.path}>
             <a className={styles["route"]}>{r.text}</a>
@@ -42,7 +42,7 @@ const Header = () => {
             <MenuAlt2Icon className="w-8 h-8 text-grain-brown "></MenuAlt2Icon>
           </Menu.Button>
 
-          <Menu.Items className=" bg-soapstone absolute rounded-md flex flex-col py-3 px-5 space-y-2">
+          <Menu.Items className=" bg-soapstone absolute rounded-md flex flex-col py-3 px-5 space-y-2 shadow-lg">
             {routes.map((r) => (
               <Menu.Item key={r.path}>
                 <Link href={r.path}>

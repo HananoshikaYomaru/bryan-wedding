@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import userConfig from "../i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Banner from "../components/Banner";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("friends");
@@ -26,44 +27,37 @@ const Home: NextPage = () => {
   return (
     <Layout>
       {/* banner */}
-      <div className="w-full">
-        <div className="h-72 sm:h-144 relative w-full ">
-          <div className="absolute h-full bg-blue-200 w-full"></div>
-
-          <Image
-            src="https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="50% 60%"
-            className="absolute h-144 w-full object-cover opacity-50"
-          />
-          <p className=" absolute whitespace-nowrap top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 space-y-5 font-serif font-bold text-2xl sm:text-6xl  text-pickled-bluewood">
-            {t("our_friends")}
-          </p>
-        </div>
-      </div>
+      <Banner image="https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp">
+        <p id="title">{t("our_friends")}</p>
+      </Banner>
 
       {/*  */}
-      <div className="flex flex-col space-y-10 my-20 w-3/4 lg:w-1/2 items-center">
+      <div
+        id="content"
+        className="flex flex-col space-y-10 my-20 w-3/4 lg:w-3/5 items-center"
+      >
         {/* sharon */}
-        <div className="w-full flex flex-row ">
+        <div className="w-full flex flex-row space-x-3 sm:space-x-10 items-center">
           <img
             src="https://res.cloudinary.com/yomaru/image/upload/v1654059411/friends/Maid_of_Honours_Sharon_jfumo6.webp"
             alt=""
             className="w-1/2"
           />
           <div>
-            <p>{t("sharon_liu")}</p>
-            <p>{t("maid_of_honours")}</p>
+            <p className="heading">{t("sharon_liu")}</p>
+            <p className="font-bold mb-3">{t("maid_of_honours")}</p>
             <p>{t("sharon_des")}</p>
           </div>
         </div>
 
         {/* alex */}
-        <div className="w-full flex flex-row">
+        <div
+          className="w-full flex flex-row space-x-3 sm:space-x-10 items-center"
+          id="people"
+        >
           <div>
-            <p>{t("alex_fung")}</p>
-            <p>{t("best_man")}</p>
+            <p className="heading">{t("alex_fung")}</p>
+            <p className="font-bold mb-3">{t("best_man")}</p>
             <p>{t("alex_des")}</p>
           </div>
           <img
@@ -73,14 +67,14 @@ const Home: NextPage = () => {
           />
         </div>
 
-        <div className="grid lg:grid-cols-3 grid-col-2 gap-5 w-full">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10 w-1/2 sm:w-full">
           {images.map((image, index) => {
             return (
-              <div key={image}>
-                <div className="h-[400px] relative">
+              <div key={image} className="flex flex-col items-center">
+                <div className=" w-full  relative aspect-[3/4]">
                   <Image src={image} alt="" layout="fill" objectFit="cover" />
                 </div>
-                <p>{t(`name_${index + 1}`)}</p>
+                <p className="font-bold">{t(`name_${index + 1}`)}</p>
                 <p>{index + 1 > 6 ? t("bridesmaid") : t("groomsman")}</p>
               </div>
             );

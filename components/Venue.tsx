@@ -12,14 +12,11 @@ const Venue = () => {
   const [current, setCurrent] = useState(0);
   const { t } = useTranslation("information");
   return (
-    <div
-      id="gallery"
-      className="flex flex-col items-center mb-20 w-full relative"
-    >
+    <div id="gallery" className="flex flex-col items-center w-full relative">
       <div className="absolute w-32 sm:w-64 opacity-50 left-[10%] -top-[10%] sm:-top-[20%] pointer-events-none">
         <Image src={Church} layout="responsive" />
       </div>
-      <p className="heading mt-20 mb-10">{t("gallery")}</p>
+      <p className="heading mb-10">{t("gallery")}</p>
       <div className=" flex flex-row w-5/6 sm:w-2/3 justify-center space-x-5 items-center ">
         <button
           onClick={() => {

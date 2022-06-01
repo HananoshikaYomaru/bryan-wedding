@@ -5,47 +5,59 @@ import userConfig from "../i18next.config";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import ImageFrame from "../components/ImageFrame";
+import Banner from "../components/Banner";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("story");
   return (
     <Layout>
       {/* banner */}
-      <div className="w-full">
-        <div className="h-72 sm:h-144 relative w-full ">
-          <div className="absolute h-full bg-blue-200 w-full"></div>
+      <Banner image="https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp">
+        <p id="title">{t("our_story")}</p>
+      </Banner>
 
-          <Image
-            src="https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="50% 60%"
-            className="absolute h-144 w-full object-cover opacity-50"
-          />
-          <p className=" absolute whitespace-nowrap top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 space-y-5 font-serif font-bold text-2xl sm:text-6xl  text-pickled-bluewood">
-            {t("our_story")}
-          </p>
-        </div>
-      </div>
-      <div className="flex flex-col space-y-10 items-center w-3/4 lg:w-1/2 my-20">
+      <div
+        id="content"
+        className="flex flex-col space-y-10 items-center w-3/4 lg:w-1/2 my-20"
+      >
         {/* the first picture */}
         <div className=" w-full h-fit  ">
-          <div className="flex flex-col lg:flex-row items-center space-y-5 lg:space-x-10">
-            <div>
-              <p>{t("title_8")}</p>
-              <p>{t("des_8")}</p>
-              <p>{t("scripture")}</p>
+          <div className="grid grid-cols-1 gap-5">
+            <div id="memory" className="overflow-visible ">
+              <p id="title" className="text-center ">
+                {t("title_8")}
+              </p>
+              <p id="description" className="text-center ">
+                {t("des_8")}
+              </p>
+              <p id="scripture" className="text-center">
+                {t("scripture")}
+              </p>
             </div>
-            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg">
+            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg min-w-[50vw]">
+              <img src="https://res.cloudinary.com/yomaru/image/upload/h_1000,c_scale/v1654056403/story/Copy_of_DSCF2296_cby3sx.webp"></img>
+            </div>
+            <div id="memory">
+              <p id="date">2021-09-26</p>
+              <p id="title">{t("title_7")}</p>
+              <p id="description">{t("des_7")}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* day we first met  */}
+        <div className="w-full h-fit ">
+          <div className="flex flex-row items-center space-x-5 lg:space-x-10">
+            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  min-w-[50%]">
               <img
-                src="https://res.cloudinary.com/yomaru/image/upload/h_1000,c_scale/v1654056403/story/Copy_of_DSCF2296_cby3sx.webp"
+                src="https://res.cloudinary.com/yomaru/image/upload/v1654056403/story/IMG-20161219-WA0018_B_F_A_dmtvnw.webp"
                 className=""
               ></img>
             </div>
-            <div>
-              <p>2021-09-26</p>
-              <p>{t("title_7")}</p>
-              <p>{t("des_7")}</p>
+            <div id="memory" className="min-w-[50%] max-w-[50%]">
+              <p id="date">2013-08-15</p>
+              <p id="title">{t("title_1")}</p>
+              <p id="description">{t("des_1")}</p>
             </div>
           </div>
         </div>
@@ -53,33 +65,16 @@ const Home: NextPage = () => {
         {/* first confession */}
         <div className="w-full h-fit ">
           <div className="flex flex-row items-center space-x-5 lg:space-x-10">
-            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  max-w-[50%] ">
+            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  min-w-[50%] ">
               <img
                 src="https://res.cloudinary.com/yomaru/image/upload/h_1000,c_scale/v1654056402/story/IMG_1270_B_F_A_bmohzr.webp"
-                className=""
-              ></img>
-            </div>
-            <div>
-              <p>2016-11-26</p>
-              <p>{t("title_1")}</p>
-              <p>{t("des_1")}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* day we first met */}
-        <div className="w-full h-fit ">
-          <div className="flex flex-row items-center space-x-5 lg:space-x-10">
-            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  max-w-[50%] ">
-              <img
-                src="https://res.cloudinary.com/yomaru/image/upload/v1654056403/story/IMG-20161219-WA0018_B_F_A_dmtvnw.webp"
                 className=" "
               ></img>
             </div>
-            <div>
-              <p>2013-08-15</p>
-              <p>{t("title_2")}</p>
-              <p>{t("des_2")}</p>
+            <div id="memory" className="min-w-[50%] max-w-[50%]">
+              <p id="date">2016-11-26</p>
+              <p id="title">{t("title_2")}</p>
+              <p id="description">{t("des_2")}</p>
             </div>
           </div>
         </div>
@@ -87,15 +82,15 @@ const Home: NextPage = () => {
         {/* 1st anniversary */}
         <div className="w-full h-fit ">
           <div className="flex flex-row items-center  space-x-5 lg:space-x-10">
-            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  max-w-[50%] ">
+            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg min-w-[50%]">
               <img
                 src="https://res.cloudinary.com/yomaru/image/upload/v1654056403/story/IMG_0807_pliznm.webp"
                 className=""
               ></img>
             </div>
-            <div>
-              <p>{t("title_3")}</p>
-              <p>{t("des_3")}</p>
+            <div id="memory" className=" min-w-[50%] max-w-[50%]">
+              <p id="title">{t("title_3")}</p>
+              <p id="description">{t("des_3")}</p>
             </div>
           </div>
         </div>
@@ -104,15 +99,15 @@ const Home: NextPage = () => {
 
         <div className="w-full h-fit ">
           <div className="flex flex-row items-center  space-x-5 lg:space-x-10">
-            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  max-w-[50%] ">
+            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg min-w-[50%] ">
               <img
                 src="https://res.cloudinary.com/yomaru/image/upload/v1654056403/story/IMG_1500_dsm8gg.webp"
                 className=""
               ></img>
             </div>
-            <div>
-              <p>{t("title_4")}</p>
-              <p>{t("des_4")}</p>
+            <div id="memory" className="min-w-[50%] max-w-[50%]">
+              <p id="title">{t("title_4")}</p>
+              <p id="description">{t("des_4")}</p>
             </div>
           </div>
         </div>
@@ -121,15 +116,15 @@ const Home: NextPage = () => {
 
         <div className="w-full h-fit ">
           <div className="flex flex-row items-center  space-x-5 lg:space-x-10">
-            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  max-w-[50%] ">
+            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  min-w-[50%] ">
               <img
                 src="https://res.cloudinary.com/yomaru/image/upload/v1654056404/story/IMG_7688_ifo5ti.webp"
                 className=""
               ></img>
             </div>
-            <div>
-              <p>{t("title_5")}</p>
-              <p>{t("des_5")}</p>
+            <div id="memory" className=" min-w-[50%] max-w-[50%]">
+              <p id="title">{t("title_5")}</p>
+              <p id="description">{t("des_5")}</p>
             </div>
           </div>
         </div>
@@ -137,15 +132,15 @@ const Home: NextPage = () => {
         {/* 4th anniversary */}
         <div className="w-full h-fit ">
           <div className="flex flex-row items-center  space-x-5 lg:space-x-10">
-            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  max-w-[50%] ">
+            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg  min-w-[50%] ">
               <img
                 src="https://res.cloudinary.com/yomaru/image/upload/v1654056403/story/IMG_1567_rswifo.webp"
                 className=""
               ></img>
             </div>
-            <div>
-              <p>{t("title_6")}</p>
-              <p>{t("des_6")}</p>
+            <div id="memory" className="min-w-[50%] max-w-[50%]">
+              <p id="title">{t("title_6")}</p>
+              <p id="description">{t("des_6")}</p>
             </div>
           </div>
         </div>

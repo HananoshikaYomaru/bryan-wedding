@@ -54,7 +54,10 @@ const Modal = ({ target, isOpen, setIsOpen, onClose }: Props) => {
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <div className="fixed inset-0 flex items-center justify-center p-4">
+          <div
+            id="modal"
+            className="fixed inset-0 flex items-center justify-center p-4"
+          >
             {target && (
               <Dialog.Panel className="inline-block w-fit min-w-[40%] p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                 <button

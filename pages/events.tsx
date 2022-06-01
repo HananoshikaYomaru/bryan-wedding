@@ -5,6 +5,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import userConfig from "../i18next.config";
 import { useTranslation } from "next-i18next";
 
+import Banner from "../components/Banner";
+
 const Home: NextPage = () => {
   const { t } = useTranslation("events");
   const images = [
@@ -38,32 +40,22 @@ const Home: NextPage = () => {
   return (
     <Layout>
       {/* banner */}
-      <div className="w-full">
-        <div className="h-72 sm:h-144 relative w-full ">
-          <div className="absolute h-full bg-blue-200 w-full"></div>
-
-          <Image
-            src="https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="50% 60%"
-            className="absolute h-144 w-full object-cover opacity-50"
-          />
-          <p className=" absolute whitespace-nowrap top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 space-y-5 font-serif font-bold text-2xl sm:text-6xl  text-pickled-bluewood">
-            {t("events")}
-          </p>
-        </div>
-      </div>
+      <Banner image="https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp">
+        <p id="title">{t("events")}</p>
+      </Banner>
 
       {/* timeline */}
 
-      <div className="flex flex-col space-y-3 w-3/4 md:w-1/2   my-20">
+      <div
+        id="content"
+        className="flex flex-col space-y-10 w-3/4 md:w-1/2  my-20"
+      >
         {images.map((image, index) => {
           return (
-            <div key={image}>
+            <div key={image} id="event" className="flex flex-col items-center">
               <img src={image} className="" />
-              <p>{descriptions[index]}</p>
-              <p>Date: {dates[index]}</p>
+              <p id="title">{t(descriptions[index])}</p>
+              <p id="time">Date: {dates[index]}</p>
             </div>
           );
         })}

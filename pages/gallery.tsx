@@ -9,6 +9,7 @@ import { useTranslation } from "next-i18next";
 import Modal from "../components/Modal";
 import { Fragment, useState } from "react";
 import Thumbnail from "../components/Thumbnail";
+import Banner from "../components/Banner";
 
 const linksToImages = (links: string[]): MemoryType[] => {
   return links.map((l, index) => {
@@ -123,24 +124,11 @@ const Home: NextPage = () => {
   return (
     <Layout>
       {/* banner */}
-      <div className="w-full">
-        <div className="h-72 lg:h-144 relative w-full ">
-          <div className="absolute h-full bg-blue-200 w-full"></div>
-          <Image
-            src="https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641543288/propose/DSCF1933_xizgvk.webp"
-            layout="fill"
-            objectFit="cover"
-            className=" opacity-50"
-          />
-          <div className="absolute flex flex-col items-center justify-center inset-0 space-y-5">
-            <p className="font-serif font-bold text-2xl sm:text-6xl  text-pickled-bluewood">
-              {t("gallery")}
-            </p>
-          </div>
-        </div>
-      </div>
+      <Banner image="https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641543288/propose/DSCF1933_xizgvk.webp">
+        <p id="title">{t("gallery")}</p>
+      </Banner>
 
-      <div className="flex flex-col my-20 w-3/4 lg:w-1/2 relative">
+      <div id="content" className="flex flex-col my-20 w-3/4 lg:w-1/2 relative">
         {/* background  */}
         <div className="absolute w-full right-0 top-0 sm:w-[60%] sm:left-1/4 sm:top-0 opacity-50 pointer-events-none">
           <Image src={Whole} layout="responsive" className="" />
@@ -151,8 +139,8 @@ const Home: NextPage = () => {
           {sectionTitles.map((title, index) => {
             return (
               <Fragment key={title}>
-                <p>{t(title)}</p>
-                <div className="w-full grid grid-cols-3 gap-8 mb-20">
+                <p className="heading">{t(title)}</p>
+                <div className="w-full grid grid-cols-3 gap-8 mb-20 mt-5">
                   {sectionImages[index].map((image, index) => (
                     <Thumbnail
                       key={image.thumbnail}
