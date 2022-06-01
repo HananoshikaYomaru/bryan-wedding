@@ -19,7 +19,7 @@ html[lang="zh"] div[data-page="/"] #banner a {
 }
 
 #banner #title {
-  @apply whitespace-nowrap font-serif font-bold text-2xl sm:text-6xl  text-pickled-bluewood;
+  @apply whitespace-nowrap font-serif font-bold text-2xl sm:text-6xl  text-pickled-bluewood capitalize;
 }
 
 html[lang="zh"] #content .heading {
