@@ -55,7 +55,7 @@ const Home: NextPage = () => {
         {/* info */}
         <div
           id="details"
-          className="z-10 relative flex flex-col items-center space-y-10  shadow-2xl p-5 xs:p-10 md:p-20 mt-20 w-full sm:max-w-[40rem] bg-white"
+          className="z-10 relative flex flex-col items-center space-y-10  shadow-2xl p-5 xs:p-10 md:p-20 mt-20 w-[90vw] sm:max-w-[40rem] bg-white"
         >
           <p className="heading">{t("details")}</p>
 

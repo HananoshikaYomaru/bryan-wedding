@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { XCircleIcon } from "@heroicons/react/solid";
 import React, { Fragment } from "react";
+import Image from "next/image";
 
 type Props = {
   target?: {
@@ -56,10 +57,10 @@ const Modal = ({ target, isOpen, setIsOpen, onClose }: Props) => {
         >
           <div
             id="modal"
-            className="fixed inset-0 flex items-center justify-center p-4"
+            className="fixed inset-0 flex items-center justify-center p-4 "
           >
             {target && (
-              <Dialog.Panel className="inline-block w-fit min-w-[40%] p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+              <Dialog.Panel className="inline-block w-fit min-w-[40%]  p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                 <button
                   onClick={() => {
                     setIsOpen(false);
@@ -74,7 +75,7 @@ const Modal = ({ target, isOpen, setIsOpen, onClose }: Props) => {
                   <img
                     src={target.image}
                     alt={target.description}
-                    className="h-[50vh]"
+                    className="h-auto max-h-[50vh]"
                   />
 
                   {target.title != "" && (
