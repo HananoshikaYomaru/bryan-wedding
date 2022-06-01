@@ -145,7 +145,7 @@ const Home: NextPage = () => {
               {routes
                 .filter((r) => r.path != "/")
                 .map((r) => (
-                  <Link href={r.path}>
+                  <Link href={r.path} key={r.path}>
                     <a
                       className={`hover:scale-110 whitespace-nowrap transition ease-in-out duration-150 ${
                         i18n.language == "en"
