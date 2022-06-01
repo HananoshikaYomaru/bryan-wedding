@@ -8,7 +8,16 @@ const nextConfig = {
   ...userConfig,
   images: {
     domains: ["res.cloudinary.com"],
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/wedding',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig 
