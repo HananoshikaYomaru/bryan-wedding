@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { MenuAlt2Icon } from "@heroicons/react/solid";
 import { Menu } from "@headlessui/react";
-import useMediaQuery from "../hooks/useMediaQuery";
 import { useTranslation } from "next-i18next";
 import styles from "./header.module.css";
 import { useMain } from "../contexts/main";

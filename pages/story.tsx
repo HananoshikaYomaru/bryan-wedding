@@ -20,34 +20,6 @@ const Home: NextPage = () => {
         id="content"
         className="flex flex-col space-y-10 items-center w-3/4 lg:w-1/2 my-20"
       >
-        {/* the first picture */}
-        <div className=" w-full h-fit  ">
-          <div className="grid grid-cols-1 gap-5">
-            <div id="memory" className="overflow-visible ">
-              <p
-                id="title"
-                className="text-center scale-[1.5] sm:scale-[2] mb-3"
-              >
-                {t("title_8")}
-              </p>
-              <p id="description" className="text-center ">
-                {t("des_8")}
-              </p>
-              <p id="scripture" className="text-center">
-                {t("scripture")}
-              </p>
-            </div>
-            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg min-w-[50vw]">
-              <img src="https://res.cloudinary.com/yomaru/image/upload/h_1000,c_scale/v1654056403/story/Copy_of_DSCF2296_cby3sx.webp"></img>
-            </div>
-            <div id="memory">
-              <p id="date">2021-09-26</p>
-              <p id="title">{t("title_7")}</p>
-              <p id="description">{t("des_7")}</p>
-            </div>
-          </div>
-        </div>
-
         {/* day we first met  */}
         <div className="w-full h-fit ">
           <div className="flex flex-row items-center space-x-5 lg:space-x-10">
@@ -144,6 +116,34 @@ const Home: NextPage = () => {
             <div id="memory" className="min-w-[50%] max-w-[50%]">
               <p id="title">{t("title_6")}</p>
               <p id="description">{t("des_6")}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* the first picture */}
+        <div className=" w-full h-fit  ">
+          <div className="grid grid-cols-1 gap-5">
+            <div id="memory" className="overflow-visible ">
+              <p
+                id="title"
+                className="text-center scale-[1.5] sm:scale-[2] mb-3"
+              >
+                {t("title_8")}
+              </p>
+              <p id="description" className="text-center ">
+                {t("des_8")}
+              </p>
+              <p id="scripture" className="text-center">
+                {t("scripture")}
+              </p>
+            </div>
+            <div className="p-1 lg:p-3 border border-gray-100 bg-white shadow-lg min-w-[50vw]">
+              <img src="https://res.cloudinary.com/yomaru/image/upload/h_1000,c_scale/v1654056403/story/Copy_of_DSCF2296_cby3sx.webp"></img>
+            </div>
+            <div id="memory">
+              <p id="date">2021-09-26</p>
+              <p id="title">{t("title_7")}</p>
+              <p id="description">{t("des_7")}</p>
             </div>
           </div>
         </div>
