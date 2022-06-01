@@ -54,8 +54,16 @@ html[lang="en"] .heading {
   @apply font-thankyou;
 }
 
+html[lang="en"] div[data-page="/info"] a > p {
+  @apply font-serif;
+}
+
+html[lang="zh"] div[data-page="/info"] a > p {
+  @apply font-chawan;
+}
+
 .heading-sm {
-  @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-lg sm:text-lg md:text-2xl;
+  @apply text-pickled-bluewood  drop-shadow whitespace-nowrap text-2xl;
 }
 
 .text-normal {
@@ -64,4 +72,12 @@ html[lang="en"] .heading {
 
 .text-small {
   @apply text-xs sm:text-sm md:text-base text-pickled-bluewood;
+}
+
+div[data-page="/info"] tr > td:first-child {
+  @apply w-48 h-10 text-normal whitespace-nowrap;
+}
+
+div[data-page="/info"] tr > td:last-child {
+  @apply text-normal;
 }
