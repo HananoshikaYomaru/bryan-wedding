@@ -15,6 +15,7 @@ const nextConfig = {
         source: '/',
         destination: '/wedding',
         permanent: true,
+        basePath: false
       },
     ]
   },
