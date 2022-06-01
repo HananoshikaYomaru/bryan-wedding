@@ -24,7 +24,10 @@ const Home: NextPage = () => {
         <div className=" w-full h-fit  ">
           <div className="grid grid-cols-1 gap-5">
             <div id="memory" className="overflow-visible ">
-              <p id="title" className="text-center ">
+              <p
+                id="title"
+                className="text-center scale-[1.5] sm:scale-[2] mb-3"
+              >
                 {t("title_8")}
               </p>
               <p id="description" className="text-center ">

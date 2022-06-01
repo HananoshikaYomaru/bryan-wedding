@@ -76,7 +76,7 @@ html[lang="en"] #details #sub-heading {
 }
 
 #memory #title {
-  @apply text-lg sm:text-xl lg:text-2xl whitespace-nowrap overflow-visible;
+  @apply text-lg sm:text-xl lg:text-2xl  overflow-visible;
 }
 
 html[lang="en"] #memory #title {
