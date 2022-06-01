@@ -37,14 +37,14 @@ const Home: NextPage = () => {
           id="map"
           className="w-full sm:max-w-[32rem] flex flex-col items-center relative"
         >
-          <div className="absolute z-[0] w-full sm:scale-[200%] sm:top-1/2 sm:left-[75%] pointer-events-none">
+          <div className="absolute  w-full sm:scale-[200%] sm:top-1/2 sm:left-[75%] pointer-events-none">
             <Image src={Map} layout="responsive" />
           </div>
           <p id="map" className="heading mt-20">
             {t("location")}
           </p>
           <iframe
-            className="z-20 w-full  aspect-1 rounded-3xl shadow-2xl mt-10"
+            className="z-[5] w-full  aspect-1 rounded-3xl shadow-2xl mt-10"
             src="https://maps.google.com/maps?q=%20Auberge%20Discovery%20Bay%20Hotel&t=&z=17&ie=UTF8&iwloc=&output=embed"
             frameBorder="0"
             scrolling="no"

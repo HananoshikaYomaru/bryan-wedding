@@ -47,7 +47,7 @@ const Home: NextPage = () => {
           <div className="absolute flex items-center justify-center inset-0">
             <div className="flex flex-col items-center space-y-3 md:space-y-10 mt-10 md:mt-32">
               <p className="text-soapstone drop-shadow font-wenyue text-base md:text-2xl">
-                {t("getting_married")}
+                {time.milliseconds() < 0 ? t("married") : t("getting_married")}
               </p>
               <p className="font-thankyou text-soapstone text-3xl  md:text-7xl drop-shadow whitespace-nowrap">
                 Bryan & Fanny
