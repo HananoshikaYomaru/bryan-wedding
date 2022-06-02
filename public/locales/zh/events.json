@@ -6,6 +6,7 @@
     "registration": "婚姻登記",
     "wedding_shower": "結婚送禮派對",
     "rehearsal_dinner": "彩排晚宴",
-    "bachelor_party": "告別單身派對",
+    "bridal_party": "告別單身派對(女)",
+    "bachelor_party": "告別單身派對(男)",
     "wedding": "在愉景灣酒店舉行婚禮"
 }

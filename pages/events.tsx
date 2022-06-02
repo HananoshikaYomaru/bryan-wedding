@@ -15,6 +15,7 @@ const Home: NextPage = () => {
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1653913235/marriage-registration-in-thailand_1_wzx6gc.jpg",
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1653913236/from-the-heart-events-bridal-shower_1_qpflfx.gif",
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1653913358/Chapel-Hill-Rehearsal-Dinner-Venue-Carolina-Club-KPO-1024x682_e2thut.jpg",
+    "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1654129797/WM_IMG_7046_x250_2x_nyfvew.webp",
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1653913235/bachelor-party-in-nashville-guide-header-1140x630_1_ppcpy5.jpg",
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1641534831/bryan/church1_lqadfp.webp",
   ];
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
     "registration",
     "wedding_shower",
     "rehearsal_dinner",
+    "bridal_party",
     "bachelor_party",
     "wedding",
   ];
@@ -33,6 +35,7 @@ const Home: NextPage = () => {
     "2022-02-26",
     "2022-07-03",
     "2022-07-25",
+    "2022-07-28",
     "2022-07-29",
     "2022-07-30",
   ];

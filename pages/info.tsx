@@ -70,7 +70,12 @@ const Home: NextPage = () => {
             </tr>
             <tr>
               <td>{t("dress_code")} ： </td>
-              <td>{t("dress_code_data")}</td>
+              <td>
+                {t("dress_code_data")}
+                <span className="inline-block ml-2">
+                  <div className="rounded h-4 bg-gradient-to-r from-teal-500 to-blue-500 w-16"></div>
+                </span>
+              </td>
             </tr>
             <tr>
               <td>{t("live_broadcast")} ： </td>
@@ -119,7 +124,7 @@ const Home: NextPage = () => {
               </td>
             </tr>
             <tr>
-              <td>{t("bus_info")} </td>
+              <td>{t("bus_info")} : </td>
               <td>{t("bus_info_data")}</td>
             </tr>
             <tr>
