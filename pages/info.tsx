@@ -62,7 +62,7 @@ const Home: NextPage = () => {
           <table className="text-pickled-bluewood font-wenyue w-full">
             <tr>
               <td>{t("date")} : </td>
-              <td>Saturday, 30th July, 2022</td>
+              <td>{t("date_time_data")}</td>
             </tr>
             <tr>
               <td>{`${t("location")} : `}</td>

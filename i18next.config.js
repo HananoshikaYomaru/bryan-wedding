@@ -1,6 +1,6 @@
 const userConfig = {
     i18n: {
-        defaultLocale: 'zh',
+        defaultLocale: 'en',
         locales: ['zh', "en"],
     },
 }
