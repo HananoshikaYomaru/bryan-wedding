@@ -22,6 +22,7 @@ const Home: NextPage = () => {
     "https://res.cloudinary.com/yomaru/image/upload/v1654059409/friends/Bridemaid_Jenny_mf1z1a.webp",
     "https://res.cloudinary.com/yomaru/image/upload/v1654059410/friends/Bridemaid_Mandy_irdng1.webp",
     "https://res.cloudinary.com/yomaru/image/upload/v1654760232/friends/Zoe_mpkaaz.jpg",
+    "https://res.cloudinary.com/yomaru/image/upload/v1654760231/friends/Yumi_hyzy1p.jpg",
   ];
 
   return (
