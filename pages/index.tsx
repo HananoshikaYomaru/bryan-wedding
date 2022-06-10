@@ -52,20 +52,20 @@ const CountDownSection = () => {
   );
 };
 
+const data = {
+  banner:
+    "https://res.cloudinary.com/yomaru/image/upload/h_2160,c_scale/v1641622736/pre-wedding/Copy_of_P1322666_e_d8zq08.webp",
+  topLeft:
+    "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532715/pre-wedding/Copy_of_P1322586_e_fybczl.webp",
+  bottomRight:
+    "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532709/pre-wedding/Copy_of_P1333156_e_gxpb0t.webp",
+  // image 3 is the middle
+  center:
+    "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532713/pre-wedding/Copy_of_P1333043_e_nahexf.webp",
+};
+
 const Home: NextPage = () => {
   const { t } = useTranslation("index");
-
-  const data = {
-    banner:
-      "https://res.cloudinary.com/yomaru/image/upload/h_2160,c_scale/v1641622736/pre-wedding/Copy_of_P1322666_e_d8zq08.webp",
-    topLeft:
-      "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532715/pre-wedding/Copy_of_P1322586_e_fybczl.webp",
-    bottomRight:
-      "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532709/pre-wedding/Copy_of_P1333156_e_gxpb0t.webp",
-    // image 3 is the middle
-    center:
-      "https://res.cloudinary.com/yomaru/image/upload/h_1080,c_scale/v1641532713/pre-wedding/Copy_of_P1333043_e_nahexf.webp",
-  };
 
   return (
     <Layout>

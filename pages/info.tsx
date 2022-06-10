@@ -10,7 +10,7 @@ import Venue from "../components/Venue";
 import Banner from "../components/Banner";
 
 const Home: NextPage = () => {
-  const { t, i18n } = useTranslation(["information"]);
+  const { t } = useTranslation(["information"]);
 
   return (
     <Layout>

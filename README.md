@@ -1,6 +1,6 @@
 # Wedding Website for my friend and church brother Bryan
 
-This website is built for one of my best friends and church brothers Bryan. I open source the web for people ot
+This website is built for one of my best friends and church brothers Bryan.
 
 ## Techstack
 
@@ -13,4 +13,4 @@ This website is built for one of my best friends and church brothers Bryan. I op
 
 ## caption
 
-Feel like to star and leave comment.
+Feel like to star and leave comments. =]
