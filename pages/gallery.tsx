@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import Layout from "../components/Layout";
-import Memory, { Memory as MemoryType } from "../components/Memory";
 import Whole from "../public/images/whole.svg";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import userConfig from "../i18next.config";
@@ -11,7 +10,14 @@ import { Fragment, useState } from "react";
 import Thumbnail from "../components/Thumbnail";
 import Banner from "../components/Banner";
 
-const linksToImages = (links: string[]): MemoryType[] => {
+export type Memory = {
+  thumbnail: string;
+  image: string;
+  title?: string;
+  description?: string;
+};
+
+const linksToImages = (links: string[]): Memory[] => {
   return links.map((l, index) => {
     const tokens = l.split("upload/");
     const image = tokens[0] + "upload/h_1080,c_scale/" + tokens[1];
