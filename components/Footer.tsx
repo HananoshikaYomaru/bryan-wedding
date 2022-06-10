@@ -1,4 +1,3 @@
-import moment from "moment";
 import Image from "next/image";
 import cover from "../public/images/cover.webp";
 import flower from "../public/images/flower.webp";
@@ -15,7 +14,8 @@ const Footer = () => {
 
       <div className="absolute   top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 flex flex-col   font-wenyue w-fit items-center text-sky-100 text-xs  sm:text-sm">
         <p>
-          Copyright © {moment().year()} YomaruHananoshika. All rights reversed.
+          Copyright © {new Date().getFullYear()} YomaruHananoshika. All rights
+          reversed.
         </p>
         <a
           className="text-gray-400 underline"

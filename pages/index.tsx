@@ -12,10 +12,48 @@ import { useTranslation } from "next-i18next";
 import useTimer from "../hooks/useTimer";
 import { useMain } from "../contexts/main";
 
+const Text = () => {
+  const { t } = useTranslation("index");
+  const { reach } = useTimer();
+  const text = reach ? t("married") : t("getting_married");
+  return (
+    <p className="text-soapstone drop-shadow font-wenyue text-base md:text-2xl">
+      {text}
+    </p>
+  );
+};
+
+const CountDownSection = () => {
+  const { t } = useTranslation("index");
+  const { reach } = useTimer();
+  const { routes } = useMain();
+  return (
+    <div className="mt-20 w-full h-fit flex flex-col items-center  space-y-10 z-10 mb-10">
+      <p className="heading" data-aos="fade-up">
+        {reach ? t("married") : t("days_until")}
+      </p>
+      {reach ? (
+        <div className="flex flex-col items-center space-y-3">
+          <p className="font-wenyue">{t("married_text_1")}</p>
+          <div className="flex flex-row space-x-8 flex-wrap  justify-center">
+            {routes
+              .filter((r) => r.path != "/")
+              .map((r) => (
+                <Link href={r.path} key={r.path}>
+                  <a id="route">{r.text}</a>
+                </Link>
+              ))}
+          </div>
+        </div>
+      ) : (
+        <Timer />
+      )}
+    </div>
+  );
+};
+
 const Home: NextPage = () => {
   const { t } = useTranslation("index");
-  const time = useTimer();
-  const { routes } = useMain();
 
   const data = {
     banner:
@@ -49,9 +87,7 @@ const Home: NextPage = () => {
             data-aos="fade"
           >
             <div className="flex flex-col items-center space-y-3 md:space-y-10 mt-10 md:mt-32">
-              <p className="text-soapstone drop-shadow font-wenyue text-base md:text-2xl">
-                {time.milliseconds() < 0 ? t("married") : t("getting_married")}
-              </p>
+              <Text></Text>
               <p className="font-thankyou text-soapstone text-3xl  md:text-7xl drop-shadow whitespace-nowrap">
                 Bryan & Fanny
               </p>
@@ -135,27 +171,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         {/* count down */}
-        <div className="mt-20 w-full h-fit flex flex-col items-center  space-y-10 z-10 mb-10">
-          <p className="heading" data-aos="fade-up">
-            {time.milliseconds() < 0 ? t("married") : t("days_until")}
-          </p>
-          {time.milliseconds() > 0 ? (
-            <Timer />
-          ) : (
-            <div className="flex flex-col items-center space-y-3">
-              <p className="font-wenyue">{t("married_text_1")}</p>
-              <div className="flex flex-row space-x-8 flex-wrap  justify-center">
-                {routes
-                  .filter((r) => r.path != "/")
-                  .map((r) => (
-                    <Link href={r.path} key={r.path}>
-                      <a id="route">{r.text}</a>
-                    </Link>
-                  ))}
-              </div>
-            </div>
-          )}
-        </div>
+        <CountDownSection></CountDownSection>
       </div>
     </Layout>
   );

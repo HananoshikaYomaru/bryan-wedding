@@ -2,7 +2,7 @@ import { useTranslation } from "next-i18next";
 import useTimer from "../hooks/useTimer";
 
 const Timer = () => {
-  const time = useTimer();
+  const { time } = useTimer();
   const { t } = useTranslation("timer");
 
   return (
