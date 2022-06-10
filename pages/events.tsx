@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1641532719/propose/DSCF1931_pgrtir.webp",
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1642849783/bryan/betrothal/F17641A9-51B2-424B-929D-DBE385D6A552_ydnnrg.webp",
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/friends/ECBF4281-36B8-4E12-BF03-CDE39879FAA7-72979-000024E6A5B65273_ay3ujv.jpg",
-    "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1653913235/marriage-registration-in-thailand_1_wzx6gc.jpg",
+    "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1654836751/registration_cmfvl5.webp",
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1653913236/from-the-heart-events-bridal-shower_1_qpflfx.gif",
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1653913358/Chapel-Hill-Rehearsal-Dinner-Venue-Carolina-Club-KPO-1024x682_e2thut.jpg",
     "https://res.cloudinary.com/yomaru/image/upload/w_1000,c_scale/v1654129797/WM_IMG_7046_x250_2x_nyfvew.webp",
@@ -47,7 +47,9 @@ const Home: NextPage = () => {
     <Layout>
       {/* banner */}
       <Banner image="https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp">
-        <p id="title">{t("events")}</p>
+        <p id="title" data-aos="fade">
+          {t("events")}
+        </p>
       </Banner>
 
       {/* timeline */}
@@ -58,7 +60,12 @@ const Home: NextPage = () => {
       >
         {images.map((image, index) => {
           return (
-            <div key={image} id="event" className="flex flex-col items-center">
+            <div
+              key={image}
+              id="event"
+              className="flex flex-col items-center"
+              data-aos="fade-up"
+            >
               <img src={image} className="" />
               <p id="title">{t(descriptions[index])}</p>
               <p id="time">Date: {dates[index]}</p>

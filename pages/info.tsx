@@ -16,7 +16,10 @@ const Home: NextPage = () => {
     <Layout>
       {/* banner */}
       <Banner image="https://res.cloudinary.com/yomaru/image/upload/v1641534831/bryan/church1_lqadfp.webp">
-        <div className="absolute flex flex-col items-center justify-center inset-0 space-y-5">
+        <div
+          className="absolute flex flex-col items-center justify-center inset-0 space-y-5"
+          data-aos="fade"
+        >
           <div className="flex flex-row items-center drop-shadow-md">
             <a href="#map">{t("location")}</a>
             <div className="w-1 h-1 rounded-full bg-pickled-bluewood"></div>
@@ -40,7 +43,7 @@ const Home: NextPage = () => {
           <div className="absolute  w-full sm:scale-[200%] sm:top-1/2 sm:left-[75%] pointer-events-none">
             <Image src={Map} layout="responsive" />
           </div>
-          <p id="map" className="heading mt-20">
+          <p id="map" className="heading mt-20" data-aos="fade-up">
             {t("location")}
           </p>
           <iframe
@@ -50,12 +53,14 @@ const Home: NextPage = () => {
             scrolling="no"
             marginHeight={0}
             marginWidth={0}
+            data-aos="fade-up"
           ></iframe>
         </div>
         {/* info */}
         <div
           id="details"
           className="z-10 relative flex flex-col items-center space-y-10  shadow-2xl p-5 xs:p-10 md:p-20 mt-20 w-[90vw] sm:max-w-[40rem] bg-white"
+          data-aos="fade-up"
         >
           <p className="heading">{t("details")}</p>
 
@@ -70,7 +75,7 @@ const Home: NextPage = () => {
             </tr>
             <tr>
               <td>{t("dress_code")} ： </td>
-              <td>
+              <td className="whitespace-nowrap">
                 {t("dress_code_data")}
                 <span className="inline-block ml-2">
                   <div className="rounded h-4 bg-gradient-to-r from-teal-500 to-blue-500 w-16"></div>

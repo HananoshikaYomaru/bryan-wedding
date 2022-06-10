@@ -52,7 +52,7 @@ html[lang="en"] #content a#route {
 }
 
 #event #title {
-  @apply text-pickled-bluewood  drop-shadow  text-2xl text-center;
+  @apply text-pickled-bluewood  drop-shadow  text-2xl text-left;
 }
 
 #event #description {

@@ -19,8 +19,13 @@ const Venue = () => {
       <div className="absolute w-32 sm:w-64 opacity-50 left-[10%] -top-[10%] sm:-top-[20%] pointer-events-none">
         <Image src={Church} layout="responsive" />
       </div>
-      <p className="heading mb-10">{t("gallery")}</p>
-      <div className=" flex flex-row w-5/6 sm:w-2/3 justify-center space-x-2 sm:space-x-5 items-center ">
+      <p className="heading mb-10" data-aos="fade-up">
+        {t("gallery")}
+      </p>
+      <div
+        className=" flex flex-row w-5/6 sm:w-2/3 justify-center space-x-2 sm:space-x-5 items-center "
+        data-aos="fade-up"
+      >
         <button
           onClick={() => {
             setCurrent(current - 1 == -1 ? images.length - 1 : current - 1);

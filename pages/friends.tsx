@@ -29,7 +29,9 @@ const Home: NextPage = () => {
     <Layout>
       {/* banner */}
       <Banner image="https://res.cloudinary.com/yomaru/image/upload/v1641532719/propose/DSCF1931_pgrtir.webp">
-        <p id="title">{t("our_friends")}</p>
+        <p id="title" data-aos="fade">
+          {t("our_friends")}
+        </p>
       </Banner>
 
       {/*  */}
@@ -43,8 +45,9 @@ const Home: NextPage = () => {
             src="https://res.cloudinary.com/yomaru/image/upload/v1654059411/friends/Maid_of_Honours_Sharon_jfumo6.webp"
             alt=""
             className="w-1/2"
+            data-aos="fade-left"
           />
-          <div>
+          <div data-aos="fade-left">
             <p id="name">{t("sharon_liu")}</p>
             <p className="font-bold mb-3">{t("maid_of_honours")}</p>
             <p>{t("sharon_des")}</p>
@@ -56,7 +59,7 @@ const Home: NextPage = () => {
           className="w-full flex flex-row space-x-3 sm:space-x-10 items-center"
           id="people"
         >
-          <div>
+          <div data-aos="fade-right">
             <p id="name">{t("alex_fung")}</p>
             <p className="font-bold mb-3">{t("best_man")}</p>
             <p>{t("alex_des")}</p>
@@ -65,13 +68,19 @@ const Home: NextPage = () => {
             src="https://res.cloudinary.com/yomaru/image/upload/v1654059409/friends/Best_Man_Alex_hphckm.webp"
             alt=""
             className="w-1/2"
+            data-aos="fade-right"
           />
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10 w-1/2 sm:w-full">
           {images.map((image, index) => {
             return (
-              <div key={image} className="flex flex-col items-center">
+              <div
+                key={image}
+                className="flex flex-col items-center"
+                data-aos="fade-up"
+                data-aos-delay={`${100 * (index % 3)}`}
+              >
                 <div className=" w-full  relative aspect-[3/4]">
                   <Image src={image} alt="" layout="fill" objectFit="cover" />
                 </div>

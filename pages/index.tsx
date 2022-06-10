@@ -13,7 +13,7 @@ import useTimer from "../hooks/useTimer";
 import { useMain } from "../contexts/main";
 
 const Home: NextPage = () => {
-  const { t, i18n } = useTranslation("index");
+  const { t } = useTranslation("index");
   const time = useTimer();
   const { routes } = useMain();
 
@@ -44,7 +44,10 @@ const Home: NextPage = () => {
             className="absolute opacity-50"
           />
           {/* <div className="backdrop-grayscale h-10 w-10"></div> */}
-          <div className="absolute flex items-center justify-center inset-0">
+          <div
+            className="absolute flex items-center justify-center inset-0"
+            data-aos="fade"
+          >
             <div className="flex flex-col items-center space-y-3 md:space-y-10 mt-10 md:mt-32">
               <p className="text-soapstone drop-shadow font-wenyue text-base md:text-2xl">
                 {time.milliseconds() < 0 ? t("married") : t("getting_married")}
@@ -76,7 +79,9 @@ const Home: NextPage = () => {
           <Image src={Wine} layout="responsive" className="" />
         </div>
 
-        <p className="mb-10 heading">{t("about_us")}</p>
+        <p className="mb-10 heading" data-aos="fade-up" data-aos-delay="50">
+          {t("about_us")}
+        </p>
 
         <div className="relative h-200 lg:h-300 w-full">
           <div className="absolute h-48 xs:h-56 sm:h-96 lg:h-144 w-full flex flex-row">
@@ -86,13 +91,16 @@ const Home: NextPage = () => {
                   src={data.topLeft}
                   layout="fill"
                   objectFit="cover"
+                  data-aos="fade-left"
                 ></Image>
               </div>
             </div>
 
             {/* description 1  */}
             <div id="description" className="pl-5 md:pl-10 lg:pl-20 lg:py-10 ">
-              <p>{t("des1")}</p>
+              <p data-aos="fade-left" data-aos-delay="200">
+                {t("des1")}
+              </p>
             </div>
           </div>
 
@@ -103,23 +111,32 @@ const Home: NextPage = () => {
                   src={data.bottomRight}
                   layout="fill"
                   objectFit="cover"
+                  data-aos="fade-right"
                 ></Image>
               </div>
             </div>
 
             {/* description 2 */}
             <div className="pr-5  md:pr-10 lg:pr-20 lg:py-10">
-              <p>{t("des2")}</p>
+              <p data-aos="fade-right" data-aos-delay="200">
+                {t("des2")}
+              </p>
             </div>
           </div>
 
           <div className="absolute inset-0 top-1/2 left-1/2  h-64 w-48 lg:h-96 lg:w-72  transform -translate-x-1/2 -translate-y-1/2 drop-shadow-xl">
-            <Image src={data.center} layout="fill" objectFit="cover"></Image>
+            <Image
+              src={data.center}
+              layout="fill"
+              objectFit="cover"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            ></Image>
           </div>
         </div>
         {/* count down */}
         <div className="mt-20 w-full h-fit flex flex-col items-center  space-y-10 z-10 mb-10">
-          <p className="heading">
+          <p className="heading" data-aos="fade-up">
             {time.milliseconds() < 0 ? t("married") : t("days_until")}
           </p>
           {time.milliseconds() > 0 ? (

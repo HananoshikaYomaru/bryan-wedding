@@ -9,6 +9,7 @@ const Timer = () => {
     <div
       id="timer"
       className="flex flex-row space-x-2 xs:space-x-5 sm:space-x-10 "
+      data-aos="fade-up"
     >
       <div>
         <p>{time.asDays().toFixed()}</p>
