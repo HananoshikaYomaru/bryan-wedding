@@ -51,8 +51,12 @@ html[lang="en"] #content a#route {
   @apply w-16 h-20 sm:w-32 sm:h-40 bg-white rounded-lg shadow-xl flex flex-col items-center justify-center;
 }
 
-#event #title {
+#wedding-event #title {
   @apply text-pickled-bluewood  drop-shadow  text-2xl text-left;
+}
+
+#event #title {
+  @apply text-pickled-bluewood  drop-shadow  text-2xl text-center;
 }
 
 #event #description {

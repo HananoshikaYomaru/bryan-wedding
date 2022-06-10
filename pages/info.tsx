@@ -101,13 +101,13 @@ const Home: NextPage = () => {
 
           <p id="sub-heading">{t("wedding_day_plan")}</p>
           <div className="flex flex-col sm:flex-row justify-between w-full font-wenyue">
-            <div id="event" className="rounded  shadow border p-5">
+            <div id="wedding-event" className="rounded  shadow border p-5">
               <p id="time">1:30 - 2:30 PM</p>
               <p id="title">{t("wedding_ceremony")}</p>
               <p id="description">{t("wedding_ceremony_des")}</p>
             </div>
             <div className="w-10 h-10"></div>
-            <div id="event" className="rounded  shadow border p-5">
+            <div id="wedding-event" className="rounded  shadow border p-5">
               <p id="time">3:00 - 5:00 PM</p>
               <p id="title">{t("cocktail_party")}</p>
               <p id="description">{t("cocktail_party_des")}</p>
