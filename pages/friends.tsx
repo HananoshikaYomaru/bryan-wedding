@@ -7,8 +7,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Banner from "../components/Banner";
 const images = [
   "https://res.cloudinary.com/yomaru/image/upload/v1654059411/friends/Groomsman_Richard_fqhsot.webp",
-  "https://res.cloudinary.com/yomaru/image/upload/v1654059410/friends/Groomsman_Eric_mqatyt.webp",
-  "https://res.cloudinary.com/yomaru/image/upload/v1654059410/friends/Groomsman_Eleos_c8f7ks.webp",
+  "https://res.cloudinary.com/yomaru/image/upload/v1655369049/friends/Eric_Kwan_gyn5fd.webp",
+  "https://res.cloudinary.com/yomaru/image/upload/v1655369215/friends/Eleos3_ax0n9s.webp",
   "https://res.cloudinary.com/yomaru/image/upload/v1654059410/friends/Groomsman_Ken_su1nzr.webp",
   "https://res.cloudinary.com/yomaru/image/upload/v1654059410/friends/Groomsman_Anson_dj9jyl.webp",
   "https://res.cloudinary.com/yomaru/image/upload/v1654059410/friends/Groomsman_Jim_zilwsl.webp",
@@ -18,7 +18,7 @@ const images = [
   "https://res.cloudinary.com/yomaru/image/upload/v1654059409/friends/Bridemaid_Jenny_mf1z1a.webp",
   "https://res.cloudinary.com/yomaru/image/upload/v1654059410/friends/Bridemaid_Mandy_irdng1.webp",
   "https://res.cloudinary.com/yomaru/image/upload/v1654760232/friends/Zoe_mpkaaz.jpg",
-  "https://res.cloudinary.com/yomaru/image/upload/v1654760231/friends/Yumi_hyzy1p.jpg",
+  "https://res.cloudinary.com/yomaru/image/upload/v1655369131/friends/Yumi_krpjsy.jpg",
 ];
 
 const Home: NextPage = () => {

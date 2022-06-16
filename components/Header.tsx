@@ -45,9 +45,7 @@ const Header = () => {
             {routes.map((r) => (
               <Menu.Item key={r.path}>
                 <Link href={r.path}>
-                  <a className={styles["route2"]} onClick={() => close()}>
-                    {r.text}
-                  </a>
+                  <a className={styles["route2"]}>{r.text}</a>
                 </Link>
               </Menu.Item>
             ))}
