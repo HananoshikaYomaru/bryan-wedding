@@ -64,7 +64,7 @@ const Home: NextPage = () => {
         >
           <p className="heading">{t("details")}</p>
 
-          <table className="text-pickled-bluewood font-wenyue w-full">
+          <table className="text-pickled-bluewood font-wenyue w-full text-sm sm:text-lg">
             <tr>
               <td>{t("date")} : </td>
               <td>{t("date_time_data")}</td>
@@ -78,7 +78,7 @@ const Home: NextPage = () => {
               <td className="whitespace-nowrap">
                 {t("dress_code_data")}
                 <span className="inline-block ml-2">
-                  <div className="rounded h-4 bg-gradient-to-r from-teal-500 to-blue-500 w-16"></div>
+                  <div className="rounded h-4 bg-gradient-to-r from-teal-500 to-blue-500 w-8 sm:w-16"></div>
                 </span>
               </td>
             </tr>
@@ -115,16 +115,13 @@ const Home: NextPage = () => {
           </div>
 
           <p className={`heading`}>{t("transportation")}</p>
-          <table className="text-pickled-bluewood font-wenyue w-full">
+          <table className="text-pickled-bluewood font-wenyue w-full text-sm sm:text-lg">
             <tr>
               <td>{t("pick_up_location")} : </td>
               <td>{t("pick_up_location_data")}</td>
             </tr>
             <tr>
-              <td
-                colSpan={2}
-                className="text-base sm:text-lg whitespace-nowrap font-bold mt-5 underline "
-              >
+              <td className="text-base sm:text-lg whitespace-nowrap font-bold mt-5 underline ">
                 {t("public_transportation")}
               </td>
             </tr>
@@ -137,10 +134,7 @@ const Home: NextPage = () => {
               <td>12:35 PM, 1:05 PM</td>
             </tr>
             <tr>
-              <td
-                colSpan={2}
-                className="text-base sm:text-lg  whitespace-nowrap font-bold mt-5 underline "
-              >
+              <td className="text-base sm:text-lg  whitespace-nowrap font-bold mt-5 underline ">
                 {t("shuttle_bus")}
               </td>
             </tr>
