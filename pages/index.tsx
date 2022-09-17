@@ -72,8 +72,8 @@ const Home: NextPage = () => {
       {/* the banner  */}
       <div className="w-full" id="banner">
         {/* aspect-[width/height] */}
-        <div className="aspect-[4629/2603] relative w-full">
-          <div className="absolute aspect-[4629/2603] bg-blue-200 w-full"></div>
+        <div className="aspect-[4629/4000] lg:aspect-[4629/2603] relative w-full">
+          <div className="absolute aspect-[4629/4000] lg:aspect-[4629/2603] bg-blue-200 w-full"></div>
           <Image
             src={data.banner}
             layout="fill"
@@ -86,11 +86,19 @@ const Home: NextPage = () => {
             className="absolute flex items-center justify-center inset-0"
             data-aos="fade"
           >
-            <div className="flex flex-col items-center space-y-3 md:space-y-10 mt-10 md:mt-32">
+            <div className="flex flex-col items-center justify-center space-y-3 md:space-y-10 w-full h-full ">
               <Text></Text>
               <p className="font-thankyou text-soapstone text-3xl  md:text-7xl drop-shadow whitespace-nowrap">
                 Bryan & Fanny
               </p>
+              <iframe
+                className="w-3/4 md:w-1/2 aspect-[16/9]"
+                src="https://www.youtube.com/embed/f9DoUJTM3IY"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
               <Link href="/info">
                 <a>{t("info")}</a>
               </Link>
